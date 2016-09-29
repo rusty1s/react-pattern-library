@@ -1,0 +1,297 @@
+table:not(.ui-datepicker-calendar) {
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  thead,
+  tbody {
+    border: 1px solid $border-color;
+
+    td,
+    th {
+      border-right: 1px solid $border-color;
+      padding: 10px 20px;
+    }
+  }
+
+  tbody {
+    tr:nth-child(odd) {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  thead {
+    background-color: #aaa;
+    color: #fff;
+
+    th {
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  tbody {
+    tr th {
+      background-color: rgba(255, 255, 255, 0.2);
+      text-align: right;
+      font-weight: bold;
+    }
+  }
+
+  tfoot td {
+    padding: 5px;
+    text-align: right;
+    font-size: 80%;
+    font-style: italic;
+  }
+
+  tbody td ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 0;
+      margin-left: 15px;
+    }
+  }
+}
+
+table td.border-top,
+table th.border-top {
+  border-top: 1px solid $border-color;
+}
+
+table td.select,
+table td.input,
+table td.textarea {
+  background-color: rgba(255, 255, 255, 0.4);
+
+  input,
+  select,
+  textarea {
+    border: none;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+table td.input,
+table th.input {
+  padding: 5px 10px;
+
+  input {
+    box-sizing: border-box;
+    padding: 5px 10px;
+  }
+}
+
+table td.input input {
+  border-bottom: 1px dashed $border-color;
+}
+
+table th.input {
+  padding: 0 !important;
+
+  input {
+    padding: 10px 20px;
+    border: 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px dashed $border-color;
+    color: white;
+  }
+
+  .button {
+    margin: 5px;
+  }
+}
+
+table td.select {
+  padding: 5px;
+
+  select {
+    padding: 5px 15px;
+  }
+}
+
+table td.textarea {
+  padding: 0;
+
+  textarea {
+    padding: 10px 20px;
+  }
+}
+
+table td.select.readonly,
+table td.input.readonly,
+table td.textarea.readonly {
+  background-color: transparent;
+}
+
+table td.center {
+  text-align: center;
+}
+
+table.break {
+  width: 100%;
+  table-layout: fixed;
+
+  td {
+    word-wrap: break-word;
+  }
+}
+
+table td.break {
+  word-break: break-all;
+}
+
+table.top tbody td,
+table.top tbody th {
+  vertical-align: top;
+}
+
+table tr.warning td,
+table tr.warn td {
+  background-color: rgba(232, 207, 0, 0.2);
+}
+
+table tr.dirty td {
+  background-color: rgba(255, 204, 102, 0.1);
+}
+
+table tr.dirty td.dirty {
+  background-color: rgba(255, 204, 102, 0.2);
+}
+
+table tr.error td {
+  background-color: rgba(186, 34, 34, 0.1);
+}
+
+table tr.error td.dirty {
+  background-color: rgba(186, 34, 34, 0.2);
+}
+
+table.tablesorter thead th,
+.sort-header {
+  cursor: pointer;
+  text-align: left !important;
+  background-image: url("../images/sortNone.png");
+  background-repeat: no-repeat;
+  background-position: 20px 50%;
+  padding-left: 41px !important;
+
+  &:hover {
+    text-shadow: 0 0 25px #fff;
+  }
+}
+
+table.tablesorter thead th.headerSortUp,
+table.tablesorter thead th.headerSortDown,
+.sort-up,
+.sort-down {
+  color: white;
+  text-shadow: 0 0 25px #fff;
+}
+
+table.tablesorter thead th.headerSortUp,
+.sort-up {
+  background-image: url("../images/sortUp.png");
+}
+
+table.tablesorter thead th.headerSortDown,
+.sort-down {
+  background-image: url("../images/sortDown.png");
+}
+
+table.table--condensed {
+  td,
+  th {
+    padding: 3px 10px !important;
+  }
+
+  td.input {
+    padding: 0 5px !important;
+
+    input {
+      padding: 3px 5px !important;
+    }
+  }
+
+  a.button {
+    padding: 5px 10px;
+  }
+
+  th.input {
+    padding: 0 !important;
+
+    input {
+      padding: 3px 10px !important;
+    }
+  }
+
+  &.tablesorter th,
+  .sort-header {
+    background-position: 10px 50% !important;
+    padding-left: 28px !important;
+  }
+}
+
+table input {
+  width: 100%;
+}
+
+table {
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: auto;
+  }
+}
+
+table.no-break {
+  tbody td {
+    white-space: nowrap;
+  }
+}
+
+table.tree {
+  .indenter a {
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+  }
+}
+
+table a.textminimize.link {
+  display: block;
+  cursor: pointer;
+  padding-top: 10px;
+
+  div {
+    width: 11px;
+    height: 5px;
+    margin: 0 auto;
+    background-image: url("../images/arrow.png");
+
+    @include opacity(0.6);
+    @include transform(rotate(0deg));
+    @include transition(all, 0.4s, ease, 0s);
+  }
+
+  &:hover {
+    div {
+      @include opacity(1);
+    }
+  }
+}
+
+table a.textminimize.link.close div {
+  @include transform(rotate(-180deg));
+}
+
+table .hint {
+  color: #111;
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
+  padding: 0 5px;
+}

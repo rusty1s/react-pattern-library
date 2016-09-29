@@ -1,0 +1,121 @@
+$main-nav-selector: 'nav.main-nav';
+
+$main-nav-width: 250px;
+
+#{$main-nav-selector} {
+  width: $main-nav-width;
+  min-width: $main-nav-width;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0;
+      margin: 0;
+
+      a,
+      span {
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  > ul {
+    @extend %top-list;
+
+    > li {
+      > span,
+      > a {
+        @extend %top-text;
+      }
+
+      > a {
+        @extend %top-link;
+      }
+
+      ul {
+        @extend %sub-list;
+
+        a {
+          @extend %sub-link;
+        }
+      }
+    }
+  }
+}
+
+#{$main-nav-selector} {
+  @include font-size(14px);
+
+  background: #252525;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+%top-list {
+  > li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+
+    &::before,
+    &::after {
+      height: 1px;
+      width: 0;
+      left: 50%;
+      background: $passion-red;
+      position: absolute;
+      content: '';
+      bottom: -1px;
+
+      @include transition(all 0.3s);
+    }
+
+    &:hover {
+      &::after {
+        width: 50%;
+      }
+
+      &::before {
+        width: 50%;
+        left: 0;
+      }
+    }
+  }
+}
+
+%top-text {
+  font-weight: $font-weight-bold;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px 5px;
+}
+
+%top-link {
+  padding: 10px 20px;
+
+  @include transition(all 0.3s);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+%sub-list {
+  padding-bottom: 10px;
+}
+
+%sub-link {
+  font-weight: 300;
+  padding: 5px 20px;
+  color: rgba(255, 255, 255, 0.6);
+
+  @include transition(all 0.3s);
+
+  &:hover {
+    color: white;
+  }
+}

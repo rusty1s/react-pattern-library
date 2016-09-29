@@ -1,0 +1,33 @@
+$button-selector: '#{$all-buttons}, a.button';
+
+#{$button-selector} {
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  margin: $margin-offset-y 0;
+  text-decoration: none;
+}
+
+#{$button-selector} {
+  box-sizing: border-box;
+  padding: 15px 40px 14px;
+  border-radius: 500px;
+  background-color: red;
+  color: white;
+  border-bottom: 5px solid black;
+  text-shadow: 0 -2px black, 0 -1px black;
+
+  &:hover {
+    background-color: green;
+    color: white;
+  }
+
+  &:active {
+    @include transform(translate(0,5px));
+
+    border-bottom: 0 solid purple;
+    text-shadow: none;
+  }
+}

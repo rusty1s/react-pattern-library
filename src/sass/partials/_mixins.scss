@@ -1,0 +1,33 @@
+@function calculate_rem($size) {
+  $remSize: $size / 16px;
+
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculate_rem($size);
+}
+
+@mixin line-height($size) {
+  line-height: $size;
+  line-height: calculate_rem($size);
+}
+
+@mixin opacity($opacity) {
+  $opacity-ie: $opacity * 100;
+
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity-ie);
+}
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}

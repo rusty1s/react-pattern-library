@@ -1,0 +1,62 @@
+#chart-container .title {
+  background-color: transparent;
+  position: absolute !important;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  width: auto;
+}
+
+.rickshaw_graph .detail .x_label {
+  display: none;
+}
+
+.rickshaw_graph .detail .item {
+  line-height: 1.4;
+  padding: 0.5em;
+}
+
+.detail_swatch {
+  float: right;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px 0 0;
+}
+
+.rickshaw_graph .detail .date {
+  color: #a0a0a0;
+}
+
+#legend {
+  float: left;
+  width: 350px;
+}
+
+#chart {
+  margin-left: 360px;
+}
+
+#legend {
+  background: none;
+  color: #5b5d5d;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+
+  ul {
+    margin: 0;
+
+    li {
+      padding-bottom: 2px;
+    }
+  }
+
+  .line .swatch {
+    margin-right: 7px;
+  }
+
+  .action {
+    opacity: 1;
+  }
+}

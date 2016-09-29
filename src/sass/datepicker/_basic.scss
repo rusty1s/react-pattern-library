@@ -1,0 +1,170 @@
+$border-color: #ccc;
+$background-color: white;
+$header-background-color: rgba(0, 0, 0, 0.02);
+$header-color: $passion-red;
+
+$weekend-color: #999;
+$unselectable-color: rgba(0, 0, 0, 0.2);
+
+$button-size: 40px;
+$button-font-size: 32px;
+
+$transition-time: 0.35s;
+$transition: all $transition-time cubic-bezier(0.31, -0.105, 0.43, 1.59);
+
+.ui-datepicker {
+  background-color: $background-color;
+  display: none;
+  border: 1px solid $border-color;
+  border-top-color: $passion-red;
+  border-top-width: 2px;
+  margin-top: -2px;
+  z-index: 2000 !important;
+
+  .ui-datepicker-header {
+    text-align: center;
+    position: relative;
+    background-color: $header-background-color;
+
+    a {
+      @include size($button-size);
+
+      position: absolute;
+      top: 50%;
+      margin-top: -$button-size/2;
+      cursor: pointer;
+
+      &.ui-datepicker-prev {
+        left: 0;
+
+        &::after {
+          content: 'chevron_left';
+        }
+      }
+
+      &.ui-datepicker-next {
+        right: 0;
+
+        &::after {
+          content: 'chevron_right';
+        }
+      }
+
+      span {
+        display: none;
+      }
+
+      &::after {
+        @extend .material-icons;
+
+        @include size(100%);
+        @include font-size($button-font-size);
+        @include transition($transition);
+
+        line-height: $button-size;
+        color: $passion-red;
+      }
+
+      &.ui-state-disabled {
+        cursor: default;
+
+        &::after {
+          color: $unselectable-color;
+        }
+      }
+
+      &:not(.ui-state-disabled) {
+        &:hover {
+          &::after {
+            @include transform(scale(1.2));
+          }
+        }
+      }
+    }
+
+    select {
+      @include font-size(20px);
+
+      margin: 5px 0;
+      padding: 5px 10px;
+      background: none;
+      border: none;
+      color: $header-color;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+
+    thead {
+      @include font-size(11px);
+
+      background-color: $header-background-color;
+
+      th {
+        padding-bottom: 5px;
+      }
+    }
+
+    tbody {
+      tr {
+        border-top: 1px solid $border-color;
+
+        td {
+          a,
+          span {
+            @include size(45px);
+
+            display: block;
+            line-height: 45px;
+          }
+
+          a {
+            @include transition($transition);
+
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+
+            &.ui-state-active {
+              background-color: $border-color;
+              color: white;
+              cursor: default;
+            }
+
+            &::before {
+              @include size(150%);
+              @include position(absolute, 80% null null -145%);
+              @include transform(rotate(45deg));
+              @include transition($transition);
+
+              content: '';
+              background-color: $passion-red;
+              z-index: -1;
+            }
+
+            &:hover:not(.ui-state-active) {
+              color: white;
+
+              &::before {
+                top: -25%;
+                left: -25%;
+              }
+            }
+          }
+
+          span {
+            color: $unselectable-color;
+          }
+        }
+      }
+    }
+
+    .ui-datepicker-week-end {
+      color: $weekend-color;
+    }
+  }
+}

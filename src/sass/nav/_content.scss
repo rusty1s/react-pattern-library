@@ -1,0 +1,42 @@
+$content-nav-selector: '.content nav';
+
+#{$content-nav-selector} {
+  @include position(relative, -20px null null -20px);
+
+  display: block !important;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0 20px;
+  border-bottom: 1px solid $border-color;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 10px 10px 10px 0;
+        color: $gray;
+
+        &::before {
+          @extend .material-icons;
+
+          content: 'chevron_right';
+          vertical-align: middle;
+          margin-top: -3px;
+        }
+
+        &:hover {
+          color: $passion-red;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+header,
+footer {
+  @include clearfix;
+
+  hr {
+    @include opacity(0.2);
+
+    display: inline-block;
+    vertical-align: baseline;
+    border: none;
+    height: 10px;
+    width: 1px;
+    background-color: $gray;
+    margin: 0 10px;
+  }
+
+  section {
+    padding: 20px;
+
+    &:last-child {
+      float: right;
+    }
+
+    &:first-child {
+      float: left;
+    }
+
+    a,
+    span,
+    h1 {
+      font-size: 13px;
+    }
+
+    span {
+      @include opacity(0.8);
+
+      color: white;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+header {
+  h1 {
+    @include opacity(0.8);
+
+    padding-left: 113px;
+    padding-top: 1px;
+    background-image: url("../images/comline-small.png");
+    background-repeat: no-repeat;
+    color: white;
+  }
+}

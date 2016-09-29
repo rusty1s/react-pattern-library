@@ -1,0 +1,19 @@
+#dump table {
+  margin-bottom: 20px;
+
+  th {
+    vertical-align: top;
+  }
+
+  td {
+    word-break: break-word;
+  }
+
+  pre {
+    display: none;
+  }
+}
+
+#dump table:last-child {
+  margin-bottom: 0;
+}
