@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "es2015",
+    "react"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-strict-mode",
+    "transform-object-assign",
+    "transform-array-from",
+    "transform-object-rest-spread"
+  ]
+}
