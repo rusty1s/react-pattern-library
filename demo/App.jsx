@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
-import { Button } from '../src';
+import Button, { PrimaryButton, DestructiveButton } from '../src/components/Button';
 
-console.log(Button);
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Button><a href="https://www.google.de">go to google</a></Button>
+        <Button>Default</Button>
+        <Button disabled={true}>Default disabled</Button>
+        <PrimaryButton>Primary</PrimaryButton>
+        <DestructiveButton>Destructive</DestructiveButton>
       </div>
     );
   }

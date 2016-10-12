@@ -1,6 +1,6 @@
 export default {
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css'],
+    extensions: ['', '.js', '.jsx'],
   },
   entry: [
     './demo/index.jsx',
@@ -21,7 +21,7 @@ export default {
         exclude: /node_modules/,
         loaders: [
           'style',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]-[hash64:2]',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]-[hash64:5]',
           // 'postcss',
         ],
       },
