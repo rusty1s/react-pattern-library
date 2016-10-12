@@ -1,19 +1,30 @@
 export default {
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.css'],
   },
   entry: [
-    './src/index.jsx',
+    './demo/index.jsx',
   ],
   output: {
     publicPath: '/public',
     filename: 'scripts.js',
   },
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loaders: ['react', 'babel'],
-      exclude: /node_modules/,
-    },
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loaders: [
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]-[hash64:2]',
+          // 'postcss',
+        ],
+      },
+    ],
   },
 };

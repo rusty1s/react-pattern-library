@@ -29,7 +29,7 @@
   "main": "src/index.jsx",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --hot --inline",
-    "lint": "eslint src test --ext .js --ext .jsx"
+    "lint": "eslint src test demo --ext .jsx"
   },
   "devDependencies": {
     "babel-core": "*",
@@ -48,6 +48,8 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "*",
     "eslint-plugin-react": "*",
+    "postcss-loader": "*",
+    "react-hot-loader": "*",
     "style-loader": "*",
     "stylelint": "*",
     "stylelint-config-standard": "*",

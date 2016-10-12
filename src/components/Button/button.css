@@ -1,0 +1,12 @@
+.default {
+  display: inline-block;
+  background: red;
+  padding: 40px;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.default > a {
+  text-decoration: none;
+  color: inherit;
+}

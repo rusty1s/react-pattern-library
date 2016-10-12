@@ -4,6 +4,7 @@
     "react"
   ],
   "plugins": [
+    "react-hot-loader/babel",
     "transform-runtime",
     "transform-strict-mode",
     "transform-object-assign",
