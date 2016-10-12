@@ -1,0 +1,24 @@
+.main {
+  margin: 0 0 1rem 0;
+
+  color: #a4224a;
+  font-weight: 300;
+  line-height: 2rem;
+  font-size: 2rem;
+}
+
+.sub {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  line-height: 1rem;
+  color: black;
+  margin: 0 0 1rem 0;
+}
+
+.sub::before {
+  display: inline-block;
+  width: 1rem;
+  content: '#';
+}

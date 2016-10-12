@@ -21,7 +21,7 @@ export default {
         exclude: /node_modules/,
         loaders: [
           'style',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]-[hash64:5]',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]-[hash:base64:5]',
           // 'postcss',
         ],
       },

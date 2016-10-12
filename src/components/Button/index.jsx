@@ -32,7 +32,7 @@ Button.propTypes = {
 Button.defaultProps = {
   disabled: false,
   isLoading: false,
-  type: 'default',
+  type: 'main',
 }
 
 export const DestructiveButton = ({ type, children, ...props }) => {
