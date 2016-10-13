@@ -1,0 +1,19 @@
+html {
+  font-size: 62.5%;
+}
+* {
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  background: #f0f2eb;
+}
+
+::selection {
+  background: black;
+  color: white;
+}

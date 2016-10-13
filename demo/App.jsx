@@ -16,8 +16,6 @@ export default class App extends Component {
           <Button disabled={true}>Default disabled</Button>
           <PrimaryButton>Primary</PrimaryButton>
           <DestructiveButton>Destructive</DestructiveButton>
-        </Grid>
-        <Grid>
           <Button>Default</Button>
           <Button disabled={true}>Default disabled</Button>
           <PrimaryButton>Primary</PrimaryButton>

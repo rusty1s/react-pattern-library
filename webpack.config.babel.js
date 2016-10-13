@@ -14,14 +14,14 @@ export default {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loaders: ['react-hot', 'babel'],
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
         loaders: [
           'style',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]-[hash:base64:5]',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]_[hash:base64:2]',
           // 'postcss',
         ],
       },
