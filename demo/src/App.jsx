@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Button, { PrimaryButton, DestructiveButton } from '../src/components/Button';
-import Baseline from '../src/layout/Baseline';
-import Grid from '../src/layout/Grid';
-import Title, { SubTitle } from '../src/components/Title'
+import Button, { PrimaryButton, DestructiveButton } from '../../src/components/Button';
+import Baseline from '../../src/layout/Baseline';
+import Grid from '../../src/layout/Grid';
+import Title, { SubTitle } from '../../src/components/Title'
 
 export default class App extends Component {
   render() {

@@ -35,10 +35,12 @@ Button.defaultProps = {
   type: 'main',
 }
 
-export const DestructiveButton = ({ type, children, ...props }) => {
-  return <Button type={'destructive'} props={props}>{children}</Button>
-}
+// export const DestructiveButton = ({ type, children, ...props }) => {
+//   return <Button type={'destructive'} props={props}>{children}</Button>
+// }
 
-export const PrimaryButton = ({ type, children, ...props }) => {
-  return <Button type={'primary'} props={props}>{children}</Button>
-}
+// export const PrimaryButton = ({ type, children, ...props }) => {
+//   return <Button type={'primary'} props={props}>{children}</Button>
+// }
+export const DestructiveButton = Button;
+export const PrimaryButton = Button;
