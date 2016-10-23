@@ -18,10 +18,10 @@
   transition: all 0.15s cubic-bezier(0.4, 0, 1, 1);
 
   &:disabled {
-  pointer-events: none;
-  cursor: not-allowed;
-  opacity: 0.5;
-  filter: grayscale(50%);
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+    filter: grayscale(50%);
   }
 }
 
