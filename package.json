@@ -40,7 +40,8 @@
     "webpack-dev-server": "^2.1.0-beta.9"
   },
   "dependencies": {
-    "autoprefixer": "*",
+    "postcss-cssnext": "*",
+    "postcss-import": "*",
     "react": "*",
     "react-dom": "*"
   }

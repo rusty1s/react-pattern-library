@@ -1,4 +1,5 @@
-const autoprefixer = require('autoprefixer');
+const cssnext = require('postcss-cssnext');
+const cssimport = require('postcss-import');
 
 module.exports = {
   entry: [
@@ -26,10 +27,10 @@ module.exports = {
           {
             loader: 'css',
             options: {
-              sourceMaps: true,
               modules: true,
+              localIdentName: '[name]__[local]_[hash:base64:2]',
               importLoaders: 1,
-              localIndentName: '[name]__[local]_[hash:base64:2]',
+              sourceMap: true,
             },
           },
           {
@@ -37,7 +38,8 @@ module.exports = {
             options: {
               plugins() {
                 return [
-                  autoprefixer,
+                  cssnext(),
+                  cssimport(),
                 ];
               },
             },
