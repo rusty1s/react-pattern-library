@@ -1,5 +1,5 @@
-const cssnext = require('postcss-cssnext');
 const cssimport = require('postcss-import');
+const cssnext = require('postcss-cssnext');
 
 module.exports = {
   entry: [
@@ -38,8 +38,8 @@ module.exports = {
             options: {
               plugins() {
                 return [
-                  cssnext(),
                   cssimport(),
+                  cssnext(),
                 ];
               },
             },

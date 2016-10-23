@@ -1,0 +1,11 @@
+:root {
+  --primary: #5b5d5d;
+  --primary--light: color(var(--primary) lightness(5%));
+  --primary--dark: color(var(--primary) darkness(5%));
+
+  --secondary: #a4224a;
+  --secondary--light: color(var(--secondary) lightness(5%));
+  --secondary--dark: color(var(--secondary) darkness(5%));
+
+  --background: #f0f2eb;
+}

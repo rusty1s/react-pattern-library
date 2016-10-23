@@ -1,3 +1,5 @@
+@import "../../globals.colors.css";
+
 .default {
   background: none;
   display: inline-block;
@@ -14,26 +16,26 @@
   font-weight: 500;
   box-sizing: border-box;
   transition: all 0.15s cubic-bezier(0.4, 0, 1, 1);
-}
 
-.default:disabled {
+  &:disabled {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.5;
   filter: grayscale(50%);
+  }
 }
 
 .main {
   composes: default;
 
-  color: #a4224a;
+  color: var(--secondary);
   box-shadow: inset 0 0 0 2px #a4224a;
 }
 
 .main:hover {
-  background: #a4224a;
+  background: var(--secondary--light);
   color: white;
-  box-shadow: inset 0 0 0 0 #a4224a;
+  box-shadow: inset 0 0 0 0 var(--secondary--light);
 }
 
 .primary {
