@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import '../../src';
+
 // import Button, { PrimaryButton, DestructiveButton } from '../../src/atoms/Button';
 import Title, { SubTitle } from '../../src/atoms/Title'
 

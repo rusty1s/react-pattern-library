@@ -5,6 +5,7 @@
   font-weight: 300;
   line-height: 5rem;
   font-size: 4.4rem;
+  background: purple;
 }
 
 .sub {
@@ -15,6 +16,8 @@
   font-weight: 500;
   color: black;
   margin: 0 0 2rem;
+  background: purple;
+  line-height: 2rem;
 }
 
 .sub::before {

@@ -1,11 +1,22 @@
 :root {
+  /*
+   * Primary color
+   */
   --primary: #5b5d5d;
   --primary--light: color(var(--primary) lightness(5%));
   --primary--dark: color(var(--primary) darkness(5%));
+  --primary--contrary: #fff;
 
+  /*
+   * Secondary color
+   */
   --secondary: #a4224a;
   --secondary--light: color(var(--secondary) lightness(5%));
   --secondary--dark: color(var(--secondary) darkness(5%));
+  --primary--contrary: #fff;
 
+  /*
+   * Other colors
+   */
   --background: #f0f2eb;
 }

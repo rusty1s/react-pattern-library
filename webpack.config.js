@@ -1,6 +1,4 @@
-const cssimport = require('postcss-import');
-const cssnext = require('postcss-cssnext');
-const cssnormalize = require('postcss-normalize');
+const postcss = require('./postcss.config');
 
 module.exports = {
   entry: [
@@ -36,15 +34,7 @@ module.exports = {
           },
           {
             loader: 'postcss',
-            options: {
-              plugins() {
-                return [
-                  cssimport(),
-                  cssnext(),
-                  cssnormalize(),
-                ];
-              },
-            },
+            options: postcss,
           },
         ],
       },

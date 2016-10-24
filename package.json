@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "postcss-cssnext": "*",
+    "postcss-font-magician": "*",
     "postcss-import": "^7.1.3",
     "postcss-normalize": "*",
     "react": "*",

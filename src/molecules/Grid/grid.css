@@ -9,6 +9,7 @@
   flex-grow: 1;
   flex-shrink: 0;
   margin: 1rem 0 0 1rem;
+  background: red;
 }
 
 .item > * {
