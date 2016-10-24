@@ -1,5 +1,6 @@
 const cssimport = require('postcss-import');
 const cssnext = require('postcss-cssnext');
+const cssnormalize = require('postcss-normalize');
 
 module.exports = {
   entry: [
@@ -40,6 +41,7 @@ module.exports = {
                 return [
                   cssimport(),
                   cssnext(),
+                  cssnormalize(),
                 ];
               },
             },
