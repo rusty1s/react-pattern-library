@@ -23,15 +23,15 @@ Button.propTypes = {
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
-  isLoading: PropTypes.bool,
+  // isLoading: PropTypes.bool,
   tabIndex: PropTypes.number,
-  icon: PropTypes.node,
+  // icon: PropTypes.node,
   type: PropTypes.string.isRequired,
 };
 
 Button.defaultProps = {
   disabled: false,
-  isLoading: false,
+  // isLoading: false,
   type: 'main',
 }
 

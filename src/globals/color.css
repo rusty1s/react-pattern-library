@@ -3,16 +3,16 @@
    * Primary color
    */
   --primary: #5b5d5d;
-  --primary--light: color(var(--primary) lightness(5%));
-  --primary--dark: color(var(--primary) darkness(5%));
+  --primary--light: color(var(--primary) lightness(100%));
+  --primary--dark: color(var(--primary) blackness(100%));
   --primary--contrary: #fff;
 
   /*
    * Secondary color
    */
   --secondary: #a4224a;
-  --secondary--light: color(var(--secondary) lightness(50%));
-  --secondary--dark: color(var(--secondary) darkness(50%));
+  --secondary--light: color(var(--secondary) lightness(40%));
+  --secondary--dark: color(var(--secondary) blackness(40%));
   --secondary--contrary: #fff;
 
   /*
