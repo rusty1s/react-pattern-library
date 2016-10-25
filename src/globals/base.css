@@ -1,18 +1,21 @@
+@import "./color.css";
+
 html {
   font-size: 62.5%;
 }
 
 * {
   font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body {
   margin: 0;
   padding: 2rem;
-  background: #f0f2eb;
+  background: var(--background);
 }
 
 ::selection {
-  background: black;
-  color: white;
+  background: var(--primary);
+  color: var(--primary--contrary);
 }

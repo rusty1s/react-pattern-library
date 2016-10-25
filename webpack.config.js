@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const postcss = require('./postcss.config');
 
 module.exports = {
@@ -32,12 +33,17 @@ module.exports = {
               sourceMap: true,
             },
           },
-          {
-            loader: 'postcss',
-            options: postcss,
-          },
+          'postcss',
         ],
       },
     ],
   },
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname,
+        postcss,
+      },
+    }),
+  ],
 };

@@ -36,7 +36,6 @@
     "style-loader": "*",
     "stylelint": "*",
     "stylelint-config-standard": "*",
-    "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.9"
   },
   "dependencies": {
@@ -45,6 +44,7 @@
     "postcss-import": "^7.1.3",
     "postcss-normalize": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "webpack": "^2.1.0-beta.25"
   }
 }

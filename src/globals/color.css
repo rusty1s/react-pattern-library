@@ -11,9 +11,9 @@
    * Secondary color
    */
   --secondary: #a4224a;
-  --secondary--light: color(var(--secondary) lightness(5%));
-  --secondary--dark: color(var(--secondary) darkness(5%));
-  --primary--contrary: #fff;
+  --secondary--light: color(var(--secondary) lightness(50%));
+  --secondary--dark: color(var(--secondary) darkness(50%));
+  --secondary--contrary: #fff;
 
   /*
    * Other colors

@@ -15,7 +15,7 @@ export default class Button extends Component {
       >
         {this.props.children}
       </button>
-  );
+    );
   }
 }
 
@@ -42,5 +42,5 @@ Button.defaultProps = {
 // export const PrimaryButton = ({ type, children, ...props }) => {
 //   return <Button type={'primary'} props={props}>{children}</Button>
 // }
-export const DestructiveButton = Button;
-export const PrimaryButton = Button;
+// export const DestructiveButton = Button;
+// export const PrimaryButton = Button;

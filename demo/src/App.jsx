@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import '../../src';
 
-// import Button, { PrimaryButton, DestructiveButton } from '../../src/atoms/Button';
+import Button from '../../src/atoms/Button';
 import Title, { SubTitle } from '../../src/atoms/Title'
 
 import Baseline from '../../src/molecules/Baseline';
@@ -15,6 +15,8 @@ export default class App extends Component {
         <Title>Hello, World!</Title>
         <SubTitle>Hello again!</SubTitle>
         <Grid>
+          <Button>wadawd</Button>
+          <Button disabled={true}>wadawd</Button>
           <span>1</span>
           <span>1</span>
           <span>1</span>

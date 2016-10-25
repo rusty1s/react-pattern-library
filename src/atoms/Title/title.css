@@ -1,27 +1,27 @@
+@import "../globals/color.css";
+
 .main {
   display: block;
   margin: 0 0 2rem;
-  color: #a4224a;
+  color: var(--secondary);
   font-weight: 300;
-  line-height: 5rem;
   font-size: 4.4rem;
-  background: purple;
+  line-height: 5rem;
 }
 
 .sub {
   display: block;
   font-size: 1.4rem;
+  line-height: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 500;
-  color: black;
+  color: var(--primary);
   margin: 0 0 2rem;
-  background: purple;
-  line-height: 2rem;
-}
 
-.sub::before {
-  display: inline-block;
-  width: 1rem;
-  content: '#';
+  &::before {
+    display: inline-block;
+    width: 1rem;
+    content: '#';
+  }
 }

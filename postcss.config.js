@@ -1,15 +1,11 @@
 const cssimport = require('postcss-import');
-const cssnext = require('postcss-cssnext');
-const cssnormalize = require('postcss-normalize');
-const cssfonts = require('postcss-font-magician');
+const next = require('postcss-cssnext');
+const normalize = require('postcss-normalize');
+const fontMagician = require('postcss-font-magician');
 
-module.exports = {
-  plugins() {
-    return [
-      cssimport(),
-      cssnext(),
-      cssnormalize(),
-      cssfonts(),
-    ];
-  },
-};
+module.exports = [
+  cssimport(),
+  next(),
+  normalize(),
+  fontMagician(),
+];
