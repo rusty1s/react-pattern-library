@@ -31,21 +31,21 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "*",
     "eslint-plugin-react": "*",
+    "postcss-cssnext": "*",
+    "postcss-font-magician": "*",
+    "postcss-import": "^7.1.3",
     "postcss-loader": "*",
+    "postcss-mixins": "*",
+    "postcss-normalize": "*",
     "react-hot-loader": "*",
     "style-loader": "*",
     "stylelint": "*",
     "stylelint-config-standard": "*",
+    "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.9"
   },
   "dependencies": {
-    "postcss-cssnext": "*",
-    "postcss-font-magician": "*",
-    "postcss-import": "^7.1.3",
-    "postcss-mixins": "*",
-    "postcss-normalize": "*",
     "react": "*",
-    "react-dom": "*",
-    "webpack": "^2.1.0-beta.25"
+    "react-dom": "*"
   }
 }

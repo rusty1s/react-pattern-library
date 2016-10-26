@@ -30,7 +30,6 @@ module.exports = {
               modules: true,
               localIdentName: '[name]__[local]_[hash:base64:2]',
               importLoaders: 1,
-              sourceMap: true,
             },
           },
           'postcss',
