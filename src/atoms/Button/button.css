@@ -1,47 +1,44 @@
 @import "../globals/color.css";
+@import "../globals/font.css";
+@import "../globals/state.css";
 
 .default {
+  @mixin strikingFont;
+
   background: none;
+  font-size: 1.4rem;
+  line-height: 2rem;
   display: inline-block;
   padding: 1rem 4rem;
   cursor: pointer;
   user-select: none;
   border: none;
-  font-size: 1.4rem;
   border-radius: 500px;
   white-space: nowrap;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 500;
   box-sizing: border-box;
-  /* transition: all 0.15s cubic-bezier(0.4, 0, 1, 1); */
   outline: none;
 
   &:disabled {
-    pointer-events: none;
-    cursor: not-allowed;
-    opacity: 0.5;
-    filter: grayscale(50%);
+    @mixin disabled;
   }
 }
 
 .main {
   composes: default;
 
-  color: var(--secondary);
-  box-shadow: inset 0 0 0 2px var(--secondary);
+  color: var(--secondaryColor);
+  box-shadow: inset 0 0 0 2px var(--secondaryColor);
 
   &:hover {
-    background: linear-gradient(60deg, var(--secondary--light), var(--secondary));
-    color: var(--secondary--contrary);
+    background: var(--secondaryLightColor);
+    color: var(--secondaryContraryColor);
     box-shadow: none;
   }
 
   &:hover:active {
-    background: linear-gradient(60deg, var(--secondary), var(--secondary--dark));
-    background: var(--secondary--dark);
-    color: var(--secondary--contrary);
+    background: var(--secondaryDarkColor);
+    color: var(--secondaryContraryColor);
     box-shadow: none;
   }
 }

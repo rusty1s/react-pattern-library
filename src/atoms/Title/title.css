@@ -1,27 +1,25 @@
 @import "../globals/color.css";
+@import "../globals/font.css";
 
 .main {
   display: block;
   margin: 0 0 2rem;
-  color: var(--secondary);
+  color: var(--secondaryColor);
   font-weight: 300;
   font-size: 4.4rem;
   line-height: 5rem;
 }
 
 .sub {
+  @mixin strikingFont;
+
   display: block;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 500;
-  color: var(--primary);
   margin: 0 0 2rem;
+  color: var(--primaryDarkColor);
 
   &::before {
     display: inline-block;
-    width: 1rem;
+    width: 2rem;
     content: '#';
   }
 }
