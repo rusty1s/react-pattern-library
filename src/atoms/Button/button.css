@@ -28,7 +28,7 @@
   composes: default;
 
   color: var(--secondaryColor);
-  box-shadow: inset 0 0 0 2px var(--secondaryColor);
+  box-shadow: inset 0 0 0 0.2rem var(--secondaryColor);
 
   &:hover {
     background: var(--secondaryLightColor);

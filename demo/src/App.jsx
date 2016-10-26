@@ -4,6 +4,7 @@ import '../../src';
 
 import Button from '../../src/atoms/Button';
 import Title, { SubTitle } from '../../src/atoms/Title'
+import List from '../../src/atoms/List';
 
 import Baseline from '../../src/molecules/Baseline';
 import Grid from '../../src/molecules/Grid';
@@ -23,6 +24,12 @@ export default class App extends Component {
           <span>1</span>
           <span>1</span>
         </Grid>
+        <List>
+          <span>awdawd</span>
+          <span>wadawd</span>
+          <SubTitle>wdawd</SubTitle>
+          <Button>wadawd</Button>
+        </List>
       </Baseline>
     );
   }
