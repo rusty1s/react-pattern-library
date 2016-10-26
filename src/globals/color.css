@@ -2,21 +2,21 @@
   /*
    * Primary color
    */
-  --primary: #5b5d5d;
-  --primary--light: color(var(--primary) lightness(100%));
-  --primary--dark: color(var(--primary) blackness(100%));
-  --primary--contrary: #fff;
+  --primaryColor: #5b5d5d;
+  --primaryLightColor: color(var(--primaryColor) lightness(40%));
+  --primaryDarkColor: #000;
+  --primaryContraryColor: #fff;
 
   /*
    * Secondary color
    */
-  --secondary: #a4224a;
-  --secondary--light: color(var(--secondary) lightness(40%));
-  --secondary--dark: color(var(--secondary) blackness(40%));
-  --secondary--contrary: #fff;
+  --secondaryColor: #a4224a;
+  --secondaryLightColor: color(var(--secondaryColor) lightness(40%));
+  --secondaryDarkColor: color(var(--secondaryColor) blackness(40%));
+  --secondaryContraryColor: #fff;
 
   /*
    * Other colors
    */
-  --background: #f0f2eb;
+  --backgroundColor: #f0f2eb;
 }

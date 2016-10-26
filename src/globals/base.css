@@ -6,15 +6,18 @@ html {
 
 * {
   font-family: Roboto, serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--primaryColor);
+  font-size: 1.6rem;
+  line-height: 2rem;
 }
 
 body {
   margin: 0;
   padding: 2rem;
-  background: var(--background);
+  background: var(--backgroundColor);
 }
 
 ::selection {
-  background: var(--primary);
-  color: var(--primary--contrary);
+  background: var(--primaryColor);
+  color: var(--primaryContraryColor);
 }
