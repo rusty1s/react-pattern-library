@@ -27,31 +27,18 @@ export default class App extends Component {
         </Grid>
         <List>
           <span>awdawd</span>
-          <span>wadawd</span>
-          <SubTitle>wdawd</SubTitle>
-          <Button>wadawd</Button>
+          <span>wadawd
+            <List>
+              <span>awdawd</span>
+              <span>wadawd</span>
+            </List>
+          </span>
+          <span>awdawd</span>
         </List>
         <Paragraph>
-          Dies ist ein wirklicher sehr langer Text mit sehr langen Wörtern wie Schifffahrtsgesellschaft. Bin mal gespannt, ob er das richtig trennen kann! Eine weitere Möglichkeits, dies zu testen, ist, einen weiteren Satz zu schreiben.
+          Dies ist ein wirklicher sehr langer Text mit sehr langen Wörtern wie Schifffahrtsgesellschaft. Bin mal gespannt, ob er das richtig trennen kann! Eine weitere Möglichkeit, dies zu testen, ist, einen weiteren Satz zu schreiben. Es scheint so, dass das nicht im Chrome funktioniert. Todtraurig!
         </Paragraph>
       </Baseline>
     );
   }
 }
-
-/*
-
-      <Baseline>
-          <Button>Default</Button>
-          <Button disabled={true}>Default disabled</Button>
-          <PrimaryButton>Primary</PrimaryButton>
-          <DestructiveButton>Destructive</DestructiveButton>
-          <Button>Default</Button>
-          <Button disabled={true}>Default disabled</Button>
-          <PrimaryButton>Primary</PrimaryButton>
-          <DestructiveButton>Destructive</DestructiveButton>
-        <SubTitle>Awesome subtitles</SubTitle>
-        <Grid>
-        </Grid>
-      </Baseline>
-          */

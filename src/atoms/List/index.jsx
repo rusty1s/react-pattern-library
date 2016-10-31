@@ -4,15 +4,15 @@ import styles from './list.css';
 
 export default class List extends Component {
   render() {
-    return (
-      <ul className={styles.default}>
-        {this.props.children.map((child, index) => (
-          <li key={index}>
-            {child}
-          </li>
-        ))}
-      </ul>
-    );
+    const children = this.props.children.map((child, index) => {
+      return (<li key={index}>{child}</li>);
+    });
+
+    if (!this.props.enumerate) {
+      return (<ul className={styles.itemize}>{children}</ul>);
+    } else {
+      return (<ol className={styles.enumerate}>{children}</ol>);
+    }
   }
 }
 
