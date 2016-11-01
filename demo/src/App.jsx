@@ -9,6 +9,7 @@ import Paragraph from '../../src/atoms/Paragraph';
 
 import Baseline from '../../src/molecules/Baseline';
 import Grid from '../../src/molecules/Grid';
+import Modal from '../../src/molecules/Modal';
 
 const App = () => (
   <Baseline>
@@ -36,6 +37,9 @@ const App = () => (
     <Paragraph>
       Ein Text!
     </Paragraph>
+    <Modal title={"LOLOLOL"}>
+      <Paragraph>Basic text</Paragraph>
+    </Modal>
   </Baseline>
 );
 
