@@ -1,17 +1,19 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import styles from './grid.css';
 
-export default class Grid extends Component {
-  render() {
-    return (
-      <div className={styles.main}>
-        {this.props.children.map((child, index) => <div key={index} className={styles.item}>{child}</div>)}
-      </div>
-    );
-  }
-}
+const Grid = ({ children }) => {
+  const items = children.map((child, index) => (
+    <div key={index} className={styles.item}>{child}</div>
+  ));
+
+  return (
+    <div className={styles.main}>{items}</div>
+  );
+};
 
 Grid.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export default Grid;

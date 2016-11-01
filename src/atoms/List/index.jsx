@@ -1,20 +1,22 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import styles from './list.css';
 
-export default class List extends Component {
-  render() {
-    const children = this.props.children.map((child, index) => {
-      return (<li key={index}>{child}</li>);
-    });
+const List = ({ children, enumerate }) => {
+  const items = children.map((child, index) => (
+    <li key={index} className={styles.item}>{child}</li>
+  ));
 
-    if (!this.props.enumerate) {
-      return (<ul className={styles.itemize}>{children}</ul>);
-    } else {
-      return (<ol className={styles.enumerate}>{children}</ol>);
-    }
+  if (!enumerate) {
+    return (
+      <ul className={styles.itemize}>{items}</ul>
+    );
   }
-}
+
+  return (
+    <ol className={styles.enumerate}>{items}</ol>
+  );
+};
 
 List.propTypes = {
   children: PropTypes.node.isRequired,
@@ -24,3 +26,5 @@ List.propTypes = {
 List.defaultProps = {
   enumerate: false,
 };
+
+export default List;

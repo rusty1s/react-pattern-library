@@ -1,15 +1,13 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import styles from './baseline.css';
 
-export default class Baseline extends Component {
-  render() {
-    return (
-      <div className={styles.main}>{this.props.children}</div>
-    );
-  }
-}
+const Baseline = ({ children }) => (
+  <div className={styles.main}>{children}</div>
+);
 
 Baseline.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export default Baseline;
