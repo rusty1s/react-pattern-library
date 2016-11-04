@@ -1,4 +1,5 @@
 @import "../../globals/color.css";
+@import "../globals/font.css";
 
 .default {
   margin: 0;
@@ -6,22 +7,21 @@
   margin-bottom: 2rem;
   list-style: none;
 
-  .default {
+  & .default {
     margin-bottom: 0;
   }
 
   & > li {
     background:
-      linear-gradient(to right, var(--secondaryColor) 20%, transparent 20%),
+      linear-gradient(to right, var(--secondaryColor) 0.2rem, transparent 0.2rem),
       linear-gradient(to bottom, transparent 0.9rem, var(--secondaryColor) 0.9rem, var(--secondaryColor) 1.1rem, transparent 1.1rem);
-    background-size: 1rem 100%;
+    background-size: 0.8rem 100%;
+    background-position: 0.4rem 0;
     background-repeat: no-repeat;
     padding-left: 2rem;
-    /* padding-bottom: 1rem; */
 
     &:last-child {
-      padding-bottom: 0;
-      background-size: 1rem 1.1rem;
+      background-size: 0.8rem 1.1rem;
     }
 
     & > * {
@@ -36,4 +36,21 @@
 
 .enumerate {
   composes: default;
+  counter-reset: item;
+
+  & > li {
+    counter-increment: item;
+
+    &::before {
+      @mixin strikingFont;
+
+      font-size: 1.4rem;
+      line-height: 2rem;
+      content: counter(item) ".";
+      color: var(--secondaryColor);
+      min-width: 1rem;
+      padding-right: 1rem;
+      display: inline-block;
+    }
+  }
 }

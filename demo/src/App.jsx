@@ -33,6 +33,12 @@ const App = () => (
         </List>
       </span>
       <span>awdawd</span>
+      <span>wadawd
+        <List enumerate>
+          <span>awdawd</span>
+          <span>wadawd</span>
+        </List>
+      </span>
     </List>
     <Paragraph>
       Ein Text!

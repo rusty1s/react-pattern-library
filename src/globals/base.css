@@ -1,14 +1,18 @@
 @import "./color.css";
 
-html {
-  font-size: 62.5%;
-}
-
 * {
   font-family: Roboto, serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: var(--primaryColor);
   font-size: 1.6rem;
   line-height: 2rem;
+}
+
+*::before, *::after {
+  user-select: none;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
