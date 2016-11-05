@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "react": "*",
+    "react-data-table": "^0.1.0",
     "react-dom": "*",
     "react-modal": "*"
   }
