@@ -10,14 +10,8 @@ import {
 } from '../src';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      value: 'Hello, World!',
-    };
-
-    this.onInput = this.onInput.bind(this);
+  state = {
+    value: 'Hello, World!',
   }
 
   onInput(value) {
@@ -46,7 +40,7 @@ class App extends Component {
         <Input
           value={this.state.value}
           maxLength={20}
-          onInput={this.onInput}
+          onInput={::this.onInput}
         />
       </Baseline>
     );

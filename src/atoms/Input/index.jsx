@@ -3,12 +3,21 @@ import React, { Component, PropTypes } from 'react';
 import styles from './input.css';
 
 class Input extends Component {
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    type: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    readOnly: PropTypes.bool.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    maxLength: PropTypes.number,
+    onInput: PropTypes.func,
+    onChange: PropTypes.func,
+    onSubmit: PropTypes.func,
+  }
 
-    this.handleInput = this.handleInput.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
+  static defaultProps = {
+    type: 'text',
+    readOnly: false,
+    placeholder: '',
   }
 
   handleInput(event) {
@@ -44,29 +53,12 @@ class Input extends Component {
         placeholder={placeholder}
         maxLength={maxLength}
         className={styles.main}
-        onChange={this.handleInput}
-        onKeyPress={this.handleKeyPress}
-        onBlur={this.handleBlur}
+        onChange={::this.handleInput}
+        onKeyPress={::this.handleKeyPress}
+        onBlur={::this.handleBlur}
       />
     );
   }
 }
-
-Input.propTypes = {
-  type: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  readOnly: PropTypes.bool.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  maxLength: PropTypes.number,
-  onInput: PropTypes.func,
-  onChange: PropTypes.func,
-  onSubmit: PropTypes.func,
-};
-
-Input.defaultProps = {
-  type: 'text',
-  readOnly: false,
-  placeholder: '',
-};
 
 export default Input;
