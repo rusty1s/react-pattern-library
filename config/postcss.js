@@ -1,4 +1,4 @@
-let postcss = require('react-dev-config')('postcss');
+const postcss = require('react-dev-config')('postcss');
 
 module.exports = postcss.concat([
   require('postcss-mixins')(),
