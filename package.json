@@ -1,5 +1,29 @@
 {
-  "private": "true",
+  "name": "helic-resources",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/rusty1s/helic-resources/issues",
+    "email": "matthias.fey@tu-dortmund.de"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Matthias Fey",
+    "email": "matthias.fey@tu-dortmund.de"
+  },
+  "files": [
+    "src"
+  ],
+  "main": "src/index.jsx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rusty1s/helic-resources"
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=3"
+  },
   "scripts": {
     "lint-scripts": "react-dev-config lint-scripts",
     "lint-styles": "react-dev-config lint-styles",
@@ -8,7 +32,12 @@
     "test": "react-dev-config test",
     "test:watch": "react-dev-config test --watch"
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "devDependencies": {
+    "pre-commit": "^1.1.3",
     "postcss-font-magician": "^1.5.0",
     "postcss-mixins": "^5.4.0",
     "react-dev-config": "git+https://github.com/rusty1s/react-dev-config.git"
