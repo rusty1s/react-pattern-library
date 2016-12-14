@@ -7,15 +7,22 @@ import {
   Button,
   Grid,
   Input,
+  PasswordInput,
+  IntegerInput,
 } from '../src';
 
 class App extends Component {
   state = {
-    value: 'Hello, World!',
+    value: '',
+    intValue: '10',
   }
 
   onInput(value) {
     this.setState({ value });
+  }
+
+  onIntegerInput(intValue) {
+    this.setState({ intValue });
   }
 
   render() {
@@ -39,8 +46,20 @@ class App extends Component {
         </Grid>
         <Input
           value={this.state.value}
+          placeholder={'Username'}
           maxLength={20}
           onInput={::this.onInput}
+        />
+        <PasswordInput
+          value={this.state.value}
+          placeholder={'Password'}
+          onInput={::this.onInput}
+        />
+        <IntegerInput
+          value={this.state.intValue}
+          placeholder={'Integer'}
+          onInput={::this.onIntegerInput}
+          min={0}
         />
       </Baseline>
     );

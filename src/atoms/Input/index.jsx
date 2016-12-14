@@ -6,24 +6,21 @@ class Input extends Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    readOnly: PropTypes.bool.isRequired,
-    placeholder: PropTypes.string.isRequired,
+    readOnly: PropTypes.bool,
+    placeholder: PropTypes.string,
     maxLength: PropTypes.number,
     onInput: PropTypes.func,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
-  }
-
-  static defaultProps = {
-    type: 'text',
-    readOnly: false,
-    placeholder: '',
+    transformInput: PropTypes.func,
   }
 
   handleInput(event) {
-    const { onInput } = this.props;
+    const { onInput, transformInput } = this.props;
+    let { value } = event.target;
 
-    if (onInput) onInput(event.target.value);
+    if (transformInput) value = transformInput(value)
+    if (onInput) onInput(value);
   }
 
   handleKeyPress(event) {
@@ -38,13 +35,12 @@ class Input extends Component {
   handleBlur() {
     const { readOnly, onChange } = this.props;
 
-    if (!readOnly) {
-      if (onChange) onChange();
-    }
+    if (!readOnly && onChange) onChange();
   }
 
   render() {
-    const { type, value, readOnly, placeholder, maxLength } = this.props;
+    const { type, value, readOnly, placeholder, maxLength, ...props } = this.props;
+
     return (
       <input
         type={type}
@@ -53,8 +49,8 @@ class Input extends Component {
         placeholder={placeholder}
         maxLength={maxLength}
         className={styles.main}
-        onChange={::this.handleInput}
         onKeyPress={::this.handleKeyPress}
+        onChange={::this.handleInput}
         onBlur={::this.handleBlur}
       />
     );
@@ -62,3 +58,32 @@ class Input extends Component {
 }
 
 export default Input;
+
+export const TextInput = ({ ...props }) => (
+  <Input {...props} type="text" />
+);
+
+export const PasswordInput = ({ ...props }) => (
+  <Input {...props} type="password" />
+);
+
+export const IntegerInput = ({ min, max, step, ...props }) => {
+  const transformInput = (value) => value.replace(/[^0-9\+-]/g, '');
+
+  return (
+    <Input
+      {...props}
+      type="number"
+      min={min}
+      max={max}
+      step={1}
+      transformInput={transformInput}
+    />
+  );
+}
+
+IntegerInput.propTypes = {
+  min: PropTypes.number,
+  max: PropTypes.number,
+  step: PropTypes.number,
+};
