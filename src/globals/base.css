@@ -1,23 +1,26 @@
 @import "./color.css";
+@import "./font.css";
 
 * {
-  font-family: Roboto, serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--fontFamily);
+  font-family: Roboto;
   color: var(--primaryColor);
   font-size: 1.6rem;
   line-height: 2rem;
 }
 
-*::before, *::after {
+*::before,
+*::after {
   user-select: none;
 }
 
 html {
+  /* TODO: WHY? */
   font-size: 62.5%;
 }
 
 body {
   margin: 0;
-  padding: 2rem;
   background: var(--backgroundColor);
 }
 

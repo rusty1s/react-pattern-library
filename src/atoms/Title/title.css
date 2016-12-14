@@ -1,5 +1,5 @@
-@import "../globals/color.css";
-@import "../globals/font.css";
+@import "../../globals/color.css";
+@import "../../globals/font.css";
 
 .main {
   display: block;

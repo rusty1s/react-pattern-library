@@ -1,58 +1,20 @@
 {
-  "name": "helic-resources",
-  "version": "0.0.0",
-  "description": "Custom styled react components",
-  "author": {
-    "name": "Matthias Fey",
-    "email": "matthias.fey@tu-dortmund.de"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/rusty1s/helic-resources.git"
-  },
-  "license": "MIT",
-  "readmeFilename": "README.md",
-  "bugs": {
-    "url": "http://github.com/rusty1s/helic-resources/issues"
-  },
-  "main": "src/index.jsx",
+  "private": "true",
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0 --hot --inline --content-base demo/",
-    "test": "jest --no-cache",
-    "lint": "eslint src demo --ext .jsx"
+    "lint-scripts": "react-dev-config lint-scripts",
+    "lint-styles": "react-dev-config lint-styles",
+    "lint": "npm run lint-scripts && npm run lint-styles",
+    "start": "react-dev-config start",
+    "test": "react-dev-config test",
+    "test:watch": "react-dev-config test --watch"
   },
   "devDependencies": {
-    "babel-core": "*",
-    "babel-jest": "*",
-    "babel-loader": "*",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
-    "babel-preset-es2015": "*",
-    "babel-preset-react": "*",
-    "css-loader": "*",
-    "eslint": "*",
-    "eslint-config-airbnb": "*",
-    "eslint-plugin-import": "^1.16.0",
-    "eslint-plugin-jsx-a11y": "*",
-    "eslint-plugin-react": "*",
-    "jest": "*",
-    "postcss-cssnext": "*",
-    "postcss-font-magician": "*",
-    "postcss-import": "^7.1.3",
-    "postcss-loader": "*",
-    "postcss-mixins": "*",
-    "postcss-normalize": "*",
-    "react-hot-loader": "*",
-    "react-test-renderer": "*",
-    "style-loader": "*",
-    "stylelint": "*",
-    "stylelint-config-standard": "*",
-    "webpack": "^2.1.0-beta.25",
-    "webpack-dev-server": "^2.1.0-beta.9"
+    "postcss-font-magician": "^1.5.0",
+    "postcss-mixins": "^5.4.0",
+    "react-dev-config": "git+https://github.com/rusty1s/react-dev-config.git"
   },
-  "dependencies": {
-    "react": "*",
-    "react-data-table": "^0.1.0",
-    "react-dom": "*",
-    "react-modal": "*"
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
   }
 }

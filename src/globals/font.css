@@ -1,3 +1,7 @@
+:root {
+  --fontFamily: Roboto, serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 @define-mixin strikingFont {
   text-transform: uppercase;
   font-weight: 500;

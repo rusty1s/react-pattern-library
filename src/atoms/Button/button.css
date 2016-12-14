@@ -1,6 +1,6 @@
-@import "../globals/color.css";
-@import "../globals/font.css";
-@import "../globals/state.css";
+@import "../../globals/color.css";
+@import "../../globals/font.css";
+@import "../../globals/state.css";
 
 .default {
   @mixin strikingFont;
@@ -17,7 +17,6 @@
   white-space: nowrap;
   text-align: center;
   box-sizing: border-box;
-  outline: none;
 
   &:disabled {
     @mixin disabled;
@@ -26,7 +25,6 @@
 
 .main {
   composes: default;
-
   color: var(--secondaryColor);
   box-shadow: inset 0 0 0 0.2rem var(--secondaryColor);
 
@@ -42,29 +40,3 @@
     box-shadow: none;
   }
 }
-
-/* .primary { */
-/*   composes: default; */
-
-/*   background: var(--secondary); */
-/*   color: var(--secondary--contrary); */
-
-/*   &:hover { */
-/*     background: var(--secondary--light); */
-/*     color: var(--secondary--contrary); */
-/*     box-shadow: inset 0 0 0 0 var(--secondary--light); */
-/*   } */
-
-/*   &:hover:active { */
-/*     background: var(--secondary--dark); */
-/*     color: var(--secondary--contrary); */
-/*     box-shadow: inset 0 0 0 0 var(--secondary--dark); */
-/*   } */
-/* } */
-
-/* .destructive { */
-/*   composes: default; */
-
-/*   color: var(--primary); */
-/*   box-shadow: inset 0 0 0 2px var(--primary); */
-/* } */
