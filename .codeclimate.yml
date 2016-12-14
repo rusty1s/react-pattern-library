@@ -8,7 +8,7 @@ engines:
     enabled: true
     channel: "eslint-3"
     config:
-      config: "config/eslintrc.js"
+      config: "node_modules/react-dev-config/config/eslintrc.js"
   fixme:
     enabled: true
   markdownlint:
