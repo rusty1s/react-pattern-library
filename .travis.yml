@@ -11,9 +11,9 @@ cache:
 before_install:
   - if [[ `npm -v` == 2* ]]; then npm install -g npm@3; fi
   - npm install -g codecov
-  - npm install react react-dom
 install:
-  npm install
+  - npm install react react-dom
+  - npm install
 script:
   - npm run lint
   - npm test

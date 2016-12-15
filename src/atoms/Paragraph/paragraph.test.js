@@ -16,3 +16,7 @@
 //   // const tree = component.toJSON();
 //   // console.log(tree);
 // });
+
+test('render', () => {
+  expect(2).toBe(2);
+});

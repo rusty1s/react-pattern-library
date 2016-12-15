@@ -32,7 +32,10 @@
     "test": "react-dev-config test",
     "test:watch": "react-dev-config test --watch"
   },
-  "pre-commit": [],
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "devDependencies": {
     "pre-commit": "^1.1.3",
     "postcss-font-magician": "^1.5.0",

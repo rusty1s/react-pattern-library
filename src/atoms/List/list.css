@@ -31,11 +31,11 @@
 }
 
 .itemize {
-  composes: default;
+  /* composes: default; */
 }
 
 .enumerate {
-  composes: default;
+  /* composes: default; */
   counter-reset: item;
 
   & > li {

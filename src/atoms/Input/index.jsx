@@ -19,7 +19,7 @@ class Input extends Component {
     const { onInput, transformInput } = this.props;
     let { value } = event.target;
 
-    if (transformInput) value = transformInput(value)
+    if (transformInput) value = transformInput(value);
     if (onInput) onInput(value);
   }
 
@@ -52,6 +52,7 @@ class Input extends Component {
         onKeyPress={::this.handleKeyPress}
         onChange={::this.handleInput}
         onBlur={::this.handleBlur}
+        {...props}
       />
     );
   }
@@ -67,8 +68,8 @@ export const PasswordInput = ({ ...props }) => (
   <Input {...props} type="password" />
 );
 
-export const IntegerInput = ({ min, max, step, ...props }) => {
-  const transformInput = (value) => value.replace(/[^0-9\+-]/g, '');
+export const IntegerInput = ({ min, max, ...props }) => {
+  const transformInput = value => value.replace(/[^0-9+-]/g, '');
 
   return (
     <Input
@@ -80,7 +81,7 @@ export const IntegerInput = ({ min, max, step, ...props }) => {
       transformInput={transformInput}
     />
   );
-}
+};
 
 IntegerInput.propTypes = {
   min: PropTypes.number,
