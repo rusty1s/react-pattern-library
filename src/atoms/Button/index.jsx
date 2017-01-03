@@ -1,17 +1,24 @@
 import React, { PropTypes } from 'react';
+import cx from 'classnames';
 
 import styles from './button.css';
 
-const Button = ({ text, onClick, disabled, tabIndex }) => (
-  <button
-    className={styles.main}
-    onClick={onClick}
-    disabled={disabled}
-    tabIndex={tabIndex}
-  >
-    {text}
-  </button>
-);
+const Button = ({ text, onClick, disabled, tabIndex }) => {
+  const classNames = cx(styles.main, {
+    [`${styles.disabled}`]: disabled,
+  });
+
+  return (
+    <button
+      className={classNames}
+      onClick={onClick}
+      disabled={disabled}
+      tabIndex={tabIndex}
+    >
+      {text}
+    </button>
+  );
+};
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,

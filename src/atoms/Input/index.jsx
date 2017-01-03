@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import cx from 'classnames';
 
 import styles from './input.css';
 
@@ -67,6 +68,10 @@ class Input extends Component {
       onSubmit,
     } = this.props;
 
+    const classNames = cx(styles.main, {
+      [`${styles.readOnly}`]: readOnly,
+    });
+
     return (
       <input
         type={type}
@@ -75,7 +80,7 @@ class Input extends Component {
         placeholder={placeholder}
         maxLength={maxLength}
         size={1}
-        className={styles.main}
+        className={classNames}
         onChange={onInput ? this.handleInput : null}
         onKeyPress={onChange || onSubmit ? this.handleKeyPress : null}
         onKeyUp={onChange || onSubmit ? this.handleKeyUp : null}

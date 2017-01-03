@@ -8,5 +8,13 @@
   border: none;
   box-sizing: border-box;
   box-shadow: inset 0 0 0 0.1rem primary-light;
-  min-width: 10rem;
+  min-width: 16rem;
+
+  &::placeholder {
+    color: primary-light;
+  }
+}
+
+.readOnly {
+  composes: disabled from '../../globals/state.css';
 }

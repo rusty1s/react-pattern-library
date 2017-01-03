@@ -3,7 +3,6 @@
 
 .default {
   composes: salient from '../../globals/font.css';
-  composes: disabled from '../../globals/state.css';
   background: none;
   font-size: 1.4rem;
   line-height: 2rem;
@@ -35,4 +34,8 @@
     color: secondary-inverted;
     box-shadow: none;
   }
+}
+
+.disabled {
+  composes: disabled from '../../globals/state.css';
 }

@@ -46,6 +46,7 @@
     "react-dom": "^0.14.0 || ^15.0.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "normalize.css": "^5.0.0"
   }
 }

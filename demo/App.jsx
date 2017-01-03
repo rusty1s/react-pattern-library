@@ -43,8 +43,8 @@ class App extends Component {
               onSubmit={() => console.log('SUBMIT')}
               value={this.state.value}
             />
-            <TextInput onInput={this.onInput} value={this.state.value} />
-            <TextInput onInput={this.onInput} value={this.state.value} />
+            <TextInput placeholder={'lolol'} onInput={this.onInput} value={this.state.value} />
+            <TextInput readOnly onInput={this.onInput} value={this.state.value} />
             <TextInput onInput={this.onInput} value={this.state.value} />
             <PasswordInput onInput={this.onInput} value={this.state.value} />
           </Grid>
