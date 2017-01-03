@@ -10,7 +10,7 @@ import {
   Paragraph,
   TextInput,
   PasswordInput,
-  // IntegerInput,
+  FormField,
 } from '../src';
 
 class App extends Component {
@@ -48,6 +48,9 @@ class App extends Component {
             <TextInput onInput={this.onInput} value={this.state.value} />
             <PasswordInput onInput={this.onInput} value={this.state.value} />
           </Grid>
+          <FormField name="HAHAHA">
+            <TextInput onInput={this.onInput} value={this.state.value} />
+          </FormField>
         </Box>
       </Baseline>
     );
