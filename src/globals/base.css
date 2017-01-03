@@ -1,30 +1,29 @@
-@import "./color.css";
-@import "./font.css";
+@value colors: '../values/colors.css';
+@value primary, primary-inverted, background from colors;
 
 * {
-  font-family: var(--fontFamily);
-  font-family: Roboto;
-  color: var(--primaryColor);
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: primary;
   font-size: 1.6rem;
   line-height: 2rem;
-}
 
-*::before,
-*::after {
-  user-select: none;
+  &::before,
+  &::after {
+    user-select: none;
+  }
 }
 
 html {
-  /* TODO: WHY? */
+  /* This makes 1em exactly 10px */
   font-size: 62.5%;
 }
 
 body {
   margin: 0;
-  background: var(--backgroundColor);
+  background: background;
 }
 
 ::selection {
-  background: var(--primaryColor);
-  color: var(--primaryContraryColor);
+  background: primary;
+  color: primary-inverted;
 }

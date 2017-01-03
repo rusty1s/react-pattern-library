@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 
 import {
   Baseline,
+  Box,
+  Grid,
   Title,
   SubTitle,
   Button,
-  Grid,
-  Input,
-  PasswordInput,
-  IntegerInput,
+  // Input,
+  // PasswordInput,
+  // IntegerInput,
 } from '../src';
 
 class App extends Component {
@@ -17,51 +18,36 @@ class App extends Component {
     intValue: '10',
   }
 
-  onInput(value) {
+  onInput = (value) => {
     this.setState({ value });
   }
 
-  onIntegerInput(intValue) {
+  onIntegerInput = (intValue) => {
     this.setState({ intValue });
   }
 
+  onClick = () => 'Clicked!';
+
   render() {
     return (
-      <Baseline>
-        <Title text="Hello, World" />
-        <SubTitle text="Hello, World" />
-        <Grid>
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" />
-          <Button text="wadawda" disabled />
-        </Grid>
-        <Input
-          value={this.state.value}
-          placeholder={'Username'}
-          maxLength={20}
-          onInput={::this.onInput}
-        />
-        <PasswordInput
-          value={this.state.value}
-          placeholder={'Password'}
-          onInput={::this.onInput}
-        />
-        <IntegerInput
-          value={this.state.intValue}
-          placeholder={'Integer'}
-          onInput={::this.onIntegerInput}
-          min={0}
-        />
-      </Baseline>
+      <div>
+        <Baseline>
+          <Box>
+            <Title text="Hello, World" />
+            <SubTitle text="Hello, World" />
+            <Grid>
+              <Button text="LOLOL" onClick={this.onClick} />
+              <Button text="LOLOL" disabled onClick={this.onClick} />
+              <Button text="LOLOL" onClick={this.onClick} />
+            </Grid>
+          </Box>
+        </Baseline>
+        <Baseline>
+          <Box>
+            <p>wadawd</p>
+          </Box>
+        </Baseline>
+      </div>
     );
   }
 }

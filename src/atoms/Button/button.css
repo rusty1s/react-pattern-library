@@ -1,13 +1,11 @@
-@import "../../globals/color.css";
-@import "../../globals/font.css";
-@import "../../globals/state.css";
+@value colors: '../../values/colors.css';
+@value secondary, secondary-inverted, secondary-light, secondary-dark from colors;
 
 .default {
-  @mixin strikingFont;
-
+  composes: salient from '../../globals/font.css';
+  composes: disabled from '../../globals/state.css';
   background: none;
   font-size: 1.4rem;
-  line-height: 2rem;
   display: inline-block;
   padding: 1rem 4rem;
   cursor: pointer;
@@ -17,26 +15,22 @@
   white-space: nowrap;
   text-align: center;
   box-sizing: border-box;
-
-  &:disabled {
-    @mixin disabled;
-  }
 }
 
 .main {
-  /* composes: default; */
-  color: var(--secondaryColor);
-  box-shadow: inset 0 0 0 0.2rem var(--secondaryColor);
+  composes: default;
+  color: secondary;
+  box-shadow: inset 0 0 0 0.2rem secondary;
 
   &:hover {
-    background: var(--secondaryLightColor);
-    color: var(--secondaryContraryColor);
+    background: secondary-light;
+    color: secondary-inverted;
     box-shadow: none;
   }
 
   &:hover:active {
-    background: var(--secondaryDarkColor);
-    color: var(--secondaryContraryColor);
+    background: secondary-dark;
+    color: secondary-inverted;
     box-shadow: none;
   }
 }

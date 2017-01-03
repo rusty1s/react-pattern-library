@@ -1,21 +1,20 @@
-@import "../../globals/color.css";
-@import "../../globals/font.css";
+@value colors: '../../values/colors.css';
+@value secondary, primary-dark from colors;
 
 .main {
   display: block;
   margin: 0 0 2rem;
-  color: var(--secondaryColor);
+  color: secondary;
   font-weight: 300;
   font-size: 4.4rem;
   line-height: 5rem;
 }
 
 .sub {
-  @mixin strikingFont;
-
+  composes: salient from '../../globals/font.css';
   display: block;
   margin: 0 0 2rem;
-  color: var(--primaryDarkColor);
+  color: primary-dark;
 
   &::before {
     display: inline-block;

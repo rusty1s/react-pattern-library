@@ -15,7 +15,7 @@ const Button = ({ text, onClick, disabled, tabIndex }) => (
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   tabIndex: PropTypes.number,
 };

@@ -1,6 +1,9 @@
+@value colors: '../../values/colors.css';
+@value primary-light from colors;
+
 .main {
   background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0, transparent 1px),
-    linear-gradient(to right, rgba(0, 0, 0, 0.2) 0, transparent 1px);
+    linear-gradient(to bottom, primary-light 0, transparent 1px),
+    linear-gradient(to right, primary-light 0, transparent 1px);
   background-size: 1rem 1rem;
 }

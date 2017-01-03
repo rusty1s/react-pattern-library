@@ -15,7 +15,7 @@ class Input extends Component {
     transformInput: PropTypes.func,
   }
 
-  handleInput(event) {
+  handleInput = (event) => {
     const { onInput, transformInput } = this.props;
     let { value } = event.target;
 
@@ -23,7 +23,7 @@ class Input extends Component {
     if (onInput) onInput(value);
   }
 
-  handleKeyPress(event) {
+  handleKeyPress = (event) => {
     const { readOnly, onChange, onSubmit } = this.props;
 
     if (!readOnly && event.key === 'Enter') {
@@ -32,7 +32,7 @@ class Input extends Component {
     }
   }
 
-  handleBlur() {
+  handleBlur = () => {
     const { readOnly, onChange } = this.props;
 
     if (!readOnly && onChange) onChange();
@@ -49,9 +49,9 @@ class Input extends Component {
         placeholder={placeholder}
         maxLength={maxLength}
         className={styles.main}
-        onKeyPress={::this.handleKeyPress}
-        onChange={::this.handleInput}
-        onBlur={::this.handleBlur}
+        onKeyPress={this.handleKeyPress}
+        onChange={this.handleInput}
+        onBlur={this.handleBlur}
         {...props}
       />
     );

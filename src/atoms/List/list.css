@@ -42,7 +42,7 @@
     counter-increment: item;
 
     &::before {
-      @mixin strikingFont;
+      /* @mixin strikingFont; */
 
       font-size: 1.4rem;
       line-height: 2rem;

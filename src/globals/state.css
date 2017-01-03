@@ -1,6 +1,8 @@
-@define-mixin disabled {
-  pointer-events: none;
-  cursor: not-allowed;
-  opacity: 0.5;
-  filter: grayscale(50%);
+.disabled {
+  &:disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+    filter: grayscale(50%);
+  }
 }
