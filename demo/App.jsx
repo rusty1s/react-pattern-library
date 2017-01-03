@@ -7,47 +7,49 @@ import {
   Title,
   SubTitle,
   Button,
-  // Input,
-  // PasswordInput,
+  Paragraph,
+  TextInput,
+  PasswordInput,
   // IntegerInput,
 } from '../src';
 
 class App extends Component {
   state = {
-    value: '',
-    intValue: '10',
+    value: 'wdawd',
   }
 
   onInput = (value) => {
     this.setState({ value });
   }
 
-  onIntegerInput = (intValue) => {
-    this.setState({ intValue });
-  }
-
   onClick = () => 'Clicked!';
 
   render() {
     return (
-      <div>
-        <Baseline>
-          <Box>
-            <Title text="Hello, World" />
-            <SubTitle text="Hello, World" />
-            <Grid>
-              <Button text="LOLOL" onClick={this.onClick} />
-              <Button text="LOLOL" disabled onClick={this.onClick} />
-              <Button text="LOLOL" onClick={this.onClick} />
-            </Grid>
-          </Box>
-        </Baseline>
-        <Baseline>
-          <Box>
-            <p>wadawd</p>
-          </Box>
-        </Baseline>
-      </div>
+      <Baseline>
+        <Box>
+          <Title text="Hello, World" />
+          <SubTitle text="Hello, World" />
+          <Grid>
+            <Button text="LOLOL" onClick={this.onClick} />
+            <Button text="LOLOL" disabled onClick={this.onClick} />
+            <Button text="LOLOL" onClick={this.onClick} />
+          </Grid>
+          <Paragraph>Basic Text Example</Paragraph>
+          <Grid>
+            <TextInput
+              onInput={this.onInput}
+              onChange={() => console.log('CHANGE')}
+              onSubmit={() => console.log('SUBMIT')}
+              value={this.state.value}
+            />
+            <TextInput onInput={this.onInput} value={this.state.value} />
+            <TextInput onInput={this.onInput} value={this.state.value} />
+            <TextInput onInput={this.onInput} value={this.state.value} />
+            <PasswordInput onInput={this.onInput} value={this.state.value} />
+          </Grid>
+        </Box>
+      </Baseline>
     );
   }
 }

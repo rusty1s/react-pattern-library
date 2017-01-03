@@ -12,23 +12,40 @@ class Input extends Component {
     onInput: PropTypes.func,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
-    transformInput: PropTypes.func,
+  }
+
+  static defaultProps = {
+    value: '',
+    readOnly: false,
+  }
+
+  state = {
+    enterPressed: false,
   }
 
   handleInput = (event) => {
-    const { onInput, transformInput } = this.props;
-    let { value } = event.target;
+    const { onInput } = this.props;
+    const { value } = event.target;
 
-    if (transformInput) value = transformInput(value);
     if (onInput) onInput(value);
   }
 
   handleKeyPress = (event) => {
     const { readOnly, onChange, onSubmit } = this.props;
 
-    if (!readOnly && event.key === 'Enter') {
+    if (!readOnly && event.key === 'Enter' && !this.state.enterPressed) {
+      this.setState({ enterPressed: true });
+
       if (onChange) onChange();
       if (onSubmit) onSubmit();
+    }
+  }
+
+  handleKeyUp = (event) => {
+    const { readOnly } = this.props;
+
+    if (!readOnly && event.key === 'Enter') {
+      this.setState({ enterPressed: false });
     }
   }
 
@@ -39,7 +56,16 @@ class Input extends Component {
   }
 
   render() {
-    const { type, value, readOnly, placeholder, maxLength, ...props } = this.props;
+    const {
+      type,
+      value,
+      readOnly,
+      placeholder,
+      maxLength,
+      onInput,
+      onChange,
+      onSubmit,
+    } = this.props;
 
     return (
       <input
@@ -48,43 +74,48 @@ class Input extends Component {
         readOnly={readOnly}
         placeholder={placeholder}
         maxLength={maxLength}
+        size={1}
         className={styles.main}
-        onKeyPress={this.handleKeyPress}
-        onChange={this.handleInput}
-        onBlur={this.handleBlur}
-        {...props}
+        onChange={onInput ? this.handleInput : null}
+        onKeyPress={onChange || onSubmit ? this.handleKeyPress : null}
+        onKeyUp={onChange || onSubmit ? this.handleKeyUp : null}
+        onBlur={onChange ? this.handleBlur : null}
       />
     );
   }
 }
 
-export default Input;
-
-export const TextInput = ({ ...props }) => (
+const TextInput = ({ ...props }) => (
   <Input {...props} type="text" />
 );
+
+export default TextInput;
 
 export const PasswordInput = ({ ...props }) => (
   <Input {...props} type="password" />
 );
 
-export const IntegerInput = ({ min, max, ...props }) => {
-  const transformInput = value => value.replace(/[^0-9+-]/g, '');
+// export const PasswordInput = ({ ...props }) => (
+//   <Input {...props} type="password" />
+// );
 
-  return (
-    <Input
-      {...props}
-      type="number"
-      min={min}
-      max={max}
-      step={1}
-      transformInput={transformInput}
-    />
-  );
-};
+// export const IntegerInput = ({ min, max, ...props }) => {
+//   const transformInput = value => value.replace(/[^0-9+-]/g, '');
 
-IntegerInput.propTypes = {
-  min: PropTypes.number,
-  max: PropTypes.number,
-  step: PropTypes.number,
-};
+//   return (
+//     <Input
+//       {...props}
+//       type="number"
+//       min={min}
+//       max={max}
+//       step={1}
+//       transformInput={transformInput}
+//     />
+//   );
+// };
+
+// IntegerInput.propTypes = {
+//   min: PropTypes.number,
+//   max: PropTypes.number,
+//   step: PropTypes.number,
+// };

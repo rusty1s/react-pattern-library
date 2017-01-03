@@ -1,5 +1,12 @@
+@value colors: '../../values/colors.css';
+@value primary-light from colors;
+
 .main {
+  display: block;
   background: white;
   padding: 0.5rem 1rem;
   border: none;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 0.1rem primary-light;
+  min-width: 10rem;
 }
