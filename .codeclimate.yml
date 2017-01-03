@@ -9,6 +9,8 @@ engines:
     channel: "eslint-3"
     config:
       config: "node_modules/react-dev-config/config/eslintrc.js"
+  csslint:
+    enabled: true
   fixme:
     enabled: true
   markdownlint:
@@ -17,4 +19,5 @@ ratings:
   paths:
     - "**.js"
     - "**.jsx"
+    - "**.css"
     - "**.md"
