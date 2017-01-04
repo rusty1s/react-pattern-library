@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 
 import styles from './form-field.css';
 
-const FormField = ({ name, children }) => (
-  <div className={styles.main}>
-    <label htmlFor={'12'}>{name}</label>
+const FormField = ({ name, children, ...props }) => (
+  <div {...props} className={styles.main}>
+    <label htmlFor={children.props.id} className={styles.label}>{name}</label>
     {children}
   </div>
 );

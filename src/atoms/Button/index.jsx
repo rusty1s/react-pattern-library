@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './button.css';
 
-const Button = ({ text, onClick, disabled, tabIndex }) => {
+const Button = ({ text, onClick, disabled, tabIndex, ...props }) => {
   const classNames = cx(styles.main, {
     [`${styles.disabled}`]: disabled,
   });
@@ -14,6 +14,7 @@ const Button = ({ text, onClick, disabled, tabIndex }) => {
       onClick={onClick}
       disabled={disabled}
       tabIndex={tabIndex}
+      {...props}
     >
       {text}
     </button>

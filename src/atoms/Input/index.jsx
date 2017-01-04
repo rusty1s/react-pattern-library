@@ -7,16 +7,20 @@ class Input extends Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    required: PropTypes.bool,
     readOnly: PropTypes.bool,
     placeholder: PropTypes.string,
     maxLength: PropTypes.number,
     onInput: PropTypes.func,
     onChange: PropTypes.func,
     onEnter: PropTypes.func,
+    validation: PropTypes.func,
   }
 
   static defaultProps = {
     value: '',
+    required: true,
     readOnly: false,
   }
 
@@ -60,12 +64,15 @@ class Input extends Component {
     const {
       type,
       value,
+      id,
+      required,
       readOnly,
       placeholder,
       maxLength,
       onInput,
       onChange,
       onEnter,
+      ...props
     } = this.props;
 
     const classNames = cx(styles.main, {
@@ -76,6 +83,8 @@ class Input extends Component {
       <input
         type={type}
         value={value}
+        id={id}
+        required={required}
         readOnly={readOnly}
         placeholder={placeholder}
         maxLength={maxLength}
@@ -85,6 +94,7 @@ class Input extends Component {
         onKeyPress={onChange || onEnter ? this.handleKeyPress : null}
         onKeyUp={onChange || onEnter ? this.handleKeyUp : null}
         onBlur={onChange ? this.handleBlur : null}
+        {...props}
       />
     );
   }
@@ -100,27 +110,11 @@ export const PasswordInput = ({ ...props }) => (
   <Input {...props} type="password" />
 );
 
-// export const PasswordInput = ({ ...props }) => (
-//   <Input {...props} type="password" />
-// );
+export const IntegerInput = ({ min, max, ...props }) => (
+  <Input {...props} type="number" min={min} max={max} step={1} />
+);
 
-// export const IntegerInput = ({ min, max, ...props }) => {
-//   const transformInput = value => value.replace(/[^0-9+-]/g, '');
-
-//   return (
-//     <Input
-//       {...props}
-//       type="number"
-//       min={min}
-//       max={max}
-//       step={1}
-//       transformInput={transformInput}
-//     />
-//   );
-// };
-
-// IntegerInput.propTypes = {
-//   min: PropTypes.number,
-//   max: PropTypes.number,
-//   step: PropTypes.number,
-// };
+IntegerInput.propTypes = {
+  min: PropTypes.number,
+  max: PropTypes.number,
+};
