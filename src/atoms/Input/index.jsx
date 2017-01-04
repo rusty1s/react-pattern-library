@@ -12,7 +12,7 @@ class Input extends Component {
     maxLength: PropTypes.number,
     onInput: PropTypes.func,
     onChange: PropTypes.func,
-    onSubmit: PropTypes.func,
+    onEnter: PropTypes.func,
   }
 
   static defaultProps = {
@@ -32,13 +32,13 @@ class Input extends Component {
   }
 
   handleKeyPress = (event) => {
-    const { readOnly, onChange, onSubmit } = this.props;
+    const { readOnly, onChange, onEnter } = this.props;
 
     if (!readOnly && event.key === 'Enter' && !this.state.enterPressed) {
       this.setState({ enterPressed: true });
 
       if (onChange) onChange();
-      if (onSubmit) onSubmit();
+      if (onEnter) onEnter();
     }
   }
 
@@ -65,7 +65,7 @@ class Input extends Component {
       maxLength,
       onInput,
       onChange,
-      onSubmit,
+      onEnter,
     } = this.props;
 
     const classNames = cx(styles.main, {
@@ -82,8 +82,8 @@ class Input extends Component {
         size={1}
         className={classNames}
         onChange={onInput ? this.handleInput : null}
-        onKeyPress={onChange || onSubmit ? this.handleKeyPress : null}
-        onKeyUp={onChange || onSubmit ? this.handleKeyUp : null}
+        onKeyPress={onChange || onEnter ? this.handleKeyPress : null}
+        onKeyUp={onChange || onEnter ? this.handleKeyUp : null}
         onBlur={onChange ? this.handleBlur : null}
       />
     );

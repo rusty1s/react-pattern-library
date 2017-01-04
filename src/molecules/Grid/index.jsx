@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Children } from 'react';
 
 import styles from './grid.css';
 
 const Grid = ({ children }) => {
-  const items = children.map((child, index) => (
+  const items = Children.map(children, (child, index) => (
     <div key={index} className={styles.item}>{child}</div>
   ));
 

@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Children } from 'react';
 
 import styles from './list.css';
 
 const List = ({ children, enumerate }) => {
-  const items = children.map((child, index) => (
+  const items = Children.map(children, (child, index) => (
     <li key={index} className={styles.item}>{child}</li>
   ));
 
