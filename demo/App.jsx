@@ -37,7 +37,7 @@ class App extends Component {
           <Title text="Hello, World" />
           <SubTitle text="Hello, World" />
           <Grid>
-            <Button text="LOLOL" onClick={this.onClick} />
+            <Button className="wdawd" text="LOLOL" onClick={this.onClick} />
             <Button text="LOLOL" disabled onClick={this.onClick} />
             <Button text="LOLOL" onClick={this.onClick} />
           </Grid>
@@ -50,7 +50,7 @@ class App extends Component {
               onEnter={() => console.log('SUBMIT')}
               value={this.state.value}
             />
-            <TextInput id="1" placeholder={'lolol'} onInput={this.onInput} value={this.state.value} />
+            <TextInput id="1" placeholder={'lolol'} onInput={this.onInput} value={this.state.value} required />
             <TextInput id="2"readOnly onInput={this.onInput} value={this.state.value} />
             <TextInput id="3" onInput={this.onInput} value={this.state.value} />
             <PasswordInput id="4" onInput={this.onInput} value={this.state.value} />

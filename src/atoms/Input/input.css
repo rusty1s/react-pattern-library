@@ -1,14 +1,21 @@
 @value colors: '../../values/colors.css';
 @value primary-light from colors;
 
-.main {
-  display: block;
+.wrapper {
+  box-shadow: inset 0 0 0 0.1rem primary-light;
   background: white;
+
+  /* This needs to be `em` to allow same width for all input types. */
+  min-width: 16em;
+}
+
+.wrapper input {
+  display: block;
   padding: 0.5rem 1rem;
+  background: none;
   border: none;
   box-sizing: border-box;
-  box-shadow: inset 0 0 0 0.1rem primary-light;
-  min-width: 16rem;
+  width: 100%;
   line-height: 2rem;
 
   &::placeholder {
@@ -18,4 +25,20 @@
 
 .readOnly {
   composes: disabled from '../../globals/state.css';
+}
+
+.required {
+  background: rgba(255, 0, 0, 1);
+}
+
+.valid {
+  background: red;
+}
+
+.invalid {
+  background: red;
+}
+
+.hint {
+  background: red;
 }

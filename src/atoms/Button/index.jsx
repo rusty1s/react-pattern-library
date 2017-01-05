@@ -3,8 +3,8 @@ import cx from 'classnames';
 
 import styles from './button.css';
 
-const Button = ({ text, onClick, disabled, tabIndex, ...props }) => {
-  const classNames = cx(styles.main, {
+const Button = ({ text, onClick, disabled, className, tabIndex, ...props }) => {
+  const classNames = cx(className, styles.main, {
     [`${styles.disabled}`]: disabled,
   });
 
@@ -25,6 +25,7 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
+  className: PropTypes.string,
   tabIndex: PropTypes.number,
 };
 

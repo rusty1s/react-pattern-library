@@ -3,118 +3,66 @@ import cx from 'classnames';
 
 import styles from './input.css';
 
-class Input extends Component {
+// required
+// max length
+// min length???
+// pattern???
+
+export default class Input extends Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    required: PropTypes.bool,
     readOnly: PropTypes.bool,
-    placeholder: PropTypes.string,
-    maxLength: PropTypes.number,
-    onInput: PropTypes.func,
+    required: PropTypes.bool,
+    className: PropTypes.string,
+    onInput: PropTypes.func.isRequired,
     onChange: PropTypes.func,
     onEnter: PropTypes.func,
-    validation: PropTypes.func,
+    validator: PropTypes.func,
   }
 
   static defaultProps = {
+    type: 'text',
     value: '',
-    required: true,
-    readOnly: false,
-  }
-
-  state = {
-    enterPressed: false,
   }
 
   handleInput = (event) => {
-    const { onInput } = this.props;
-    const { value } = event.target;
-
-    if (onInput) onInput(value);
+    this.props.onInput(event.target.value);
   }
 
-  handleKeyPress = (event) => {
-    const { readOnly, onChange, onEnter } = this.props;
-
-    if (!readOnly && event.key === 'Enter' && !this.state.enterPressed) {
-      this.setState({ enterPressed: true });
-
-      if (onChange) onChange();
-      if (onEnter) onEnter();
-    }
-  }
-
-  handleKeyUp = (event) => {
-    const { readOnly } = this.props;
-
-    if (!readOnly && event.key === 'Enter') {
-      this.setState({ enterPressed: false });
+  handleKeyDown = (event) => {
+    if (!this.props.readOnly && event.key === 'Enter') {
+      this.props.onChange();
+      this.props.onEnter();
     }
   }
 
   handleBlur = () => {
-    const { readOnly, onChange } = this.props;
-
-    if (!readOnly && onChange) onChange();
+    if (!this.propsreadOnly) this.props.onChange();
   }
 
   render() {
-    const {
-      type,
-      value,
-      id,
-      required,
-      readOnly,
-      placeholder,
-      maxLength,
-      onInput,
-      onChange,
-      onEnter,
-      ...props
-    } = this.props;
+    const { value, onInput, onChange, onEnter, className, validator, ...props } = this.props;
 
-    const classNames = cx(styles.main, {
-      [`${styles.readOnly}`]: readOnly,
+    const errors = validator ? validator(value) : null;
+
+    const classNames = cx(className, styles.wrapper, {
+      [`${styles.readOnly}`]: this.props.readOnly,
+      [`${styles.required}`]: this.props.required,
+      [`${styles.invalid}`]: errors,
     });
 
     return (
-      <input
-        type={type}
-        value={value}
-        id={id}
-        required={required}
-        readOnly={readOnly}
-        placeholder={placeholder}
-        maxLength={maxLength}
-        size={1}
-        className={classNames}
-        onChange={onInput ? this.handleInput : null}
-        onKeyPress={onChange || onEnter ? this.handleKeyPress : null}
-        onKeyUp={onChange || onEnter ? this.handleKeyUp : null}
-        onBlur={onChange ? this.handleBlur : null}
-        {...props}
-      />
+      <div className={classNames}>
+        <input
+          size={1}
+          onChange={onInput ? this.handleInput : null}
+          onKeyDown={onChange || onEnter ? this.handleKeyDown : null}
+          onBlur={onChange ? this.handleBlur : null}
+          {...props}
+        />
+        <span />
+      </div>
     );
   }
 }
-
-const TextInput = ({ ...props }) => (
-  <Input {...props} type="text" />
-);
-
-export default TextInput;
-
-export const PasswordInput = ({ ...props }) => (
-  <Input {...props} type="password" />
-);
-
-export const IntegerInput = ({ min, max, ...props }) => (
-  <Input {...props} type="number" min={min} max={max} step={1} />
-);
-
-IntegerInput.propTypes = {
-  min: PropTypes.number,
-  max: PropTypes.number,
-};
