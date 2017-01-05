@@ -1,21 +1,15 @@
 @value colors: '../../values/colors.css';
-@value primary-light from colors;
+@value primary-inverted, primary-light from colors;
 
-.wrapper {
-  box-shadow: inset 0 0 0 0.1rem primary-light;
-  background: white;
-
+.main {
   /* This needs to be `em` to allow same width for all input types. */
   min-width: 16em;
-}
-
-.wrapper input {
   display: block;
   padding: 0.5rem 1rem;
-  background: none;
+  background: primary-inverted;
+  box-shadow: inset 0 0 0 0.2rem primary-light;
   border: none;
   box-sizing: border-box;
-  width: 100%;
   line-height: 2rem;
 
   &::placeholder {
@@ -28,17 +22,9 @@
 }
 
 .required {
-  background: rgba(255, 0, 0, 1);
-}
-
-.valid {
-  background: red;
+  background: primary-inverted;
 }
 
 .invalid {
-  background: red;
-}
-
-.hint {
-  background: red;
+  background: primary-inverted;
 }

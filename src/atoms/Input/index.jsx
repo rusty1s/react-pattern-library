@@ -3,22 +3,17 @@ import cx from 'classnames';
 
 import styles from './input.css';
 
-// required
-// max length
-// min length???
-// pattern???
-
 export default class Input extends Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     readOnly: PropTypes.bool,
     required: PropTypes.bool,
+    invalid: PropTypes.bool,
     className: PropTypes.string,
     onInput: PropTypes.func.isRequired,
     onChange: PropTypes.func,
     onEnter: PropTypes.func,
-    validator: PropTypes.func,
   }
 
   static defaultProps = {
@@ -30,7 +25,7 @@ export default class Input extends Component {
     this.props.onInput(event.target.value);
   }
 
-  handleKeyDown = (event) => {
+  handleKeyPress = (event) => {
     if (!this.props.readOnly && event.key === 'Enter') {
       this.props.onChange();
       this.props.onEnter();
@@ -42,27 +37,23 @@ export default class Input extends Component {
   }
 
   render() {
-    const { value, onInput, onChange, onEnter, className, validator, ...props } = this.props;
+    const { onInput, onChange, onEnter, className, invalid, ...props } = this.props;
 
-    const errors = validator ? validator(value) : null;
-
-    const classNames = cx(className, styles.wrapper, {
+    const classNames = cx(className, styles.main, {
       [`${styles.readOnly}`]: this.props.readOnly,
       [`${styles.required}`]: this.props.required,
-      [`${styles.invalid}`]: errors,
+      [`${styles.invalid}`]: invalid,
     });
 
     return (
-      <div className={classNames}>
-        <input
-          size={1}
-          onChange={onInput ? this.handleInput : null}
-          onKeyDown={onChange || onEnter ? this.handleKeyDown : null}
-          onBlur={onChange ? this.handleBlur : null}
-          {...props}
-        />
-        <span />
-      </div>
+      <input
+        size={1}
+        className={classNames}
+        onChange={onInput ? this.handleInput : null}
+        onKeyPress={onChange || onEnter ? this.handleKeyPress : null}
+        onBlur={onChange ? this.handleBlur : null}
+        {...props}
+      />
     );
   }
 }
