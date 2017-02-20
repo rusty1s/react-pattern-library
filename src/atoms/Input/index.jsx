@@ -5,8 +5,8 @@ import styles from './input.css';
 
 export default class Input extends Component {
   static propTypes = {
-    type: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    value: PropTypes.string,
     readOnly: PropTypes.bool,
     required: PropTypes.bool,
     invalid: PropTypes.bool,
@@ -19,6 +19,13 @@ export default class Input extends Component {
   static defaultProps = {
     type: 'text',
     value: '',
+    readOnly: false,
+    required: false,
+    invalid: false,
+    className: null,
+    onInput: null,
+    onChange: null,
+    onEnter: null,
   }
 
   handleInput = (event) => {

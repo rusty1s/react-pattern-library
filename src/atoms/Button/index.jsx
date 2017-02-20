@@ -31,6 +31,8 @@ Button.propTypes = {
 
 Button.defaultProps = {
   disabled: false,
+  className: null,
+  tabIndex: null,
 };
 
 export default Button;

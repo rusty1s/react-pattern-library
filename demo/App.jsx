@@ -46,8 +46,8 @@ class App extends Component {
             <TextInput
               id="0"
               onInput={this.onInput}
-              onChange={() => console.log('CHANGE')}
-              onEnter={() => console.log('SUBMIT')}
+              onChange={() => 'CHANGE'}
+              onEnter={() => 'SUBMIT'}
               value={this.state.value}
             />
             <TextInput id="1" placeholder={'lolol'} onInput={this.onInput} value={this.state.value} required />

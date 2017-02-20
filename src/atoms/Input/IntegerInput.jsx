@@ -17,4 +17,9 @@ IntegerInput.propTypes = {
   max: PropTypes.number,
 };
 
+IntegerInput.defaultProps = {
+  min: null,
+  max: null,
+};
+
 export default IntegerInput;

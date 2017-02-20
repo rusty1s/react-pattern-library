@@ -1,4 +1,4 @@
-const common = require('react-dev-config')('webpack.common');
+const common = require('react-dev-config/webpack.common');
 
 common.entry = [
   './demo/index.jsx',
