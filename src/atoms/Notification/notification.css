@@ -1,0 +1,67 @@
+.main {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+}
+
+.icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 2em;
+}
+
+.content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0.5em 0 0.5em 1em;
+}
+
+.success {
+  background: #5ed490;
+
+  & .content {
+    color: white;
+  }
+
+  & .icon {
+    & circle {
+      stroke: white;
+      fill: transparent;
+      stroke-width: 8;
+      cx: 50;
+      cy: 50;
+      r: 46;
+      stroke-dasharray: 290, 290;
+      animation: rotate-circle 0.5s ease-in-out;
+    }
+
+    & polyline {
+      stroke: white;
+      fill: transparent;
+      stroke-width: 8;
+      stroke-dasharray: 80, 80;
+      animation: rotate-arrow 0.5s ease-in-out;
+    }
+  }
+}
+
+@keyframes rotate-circle {
+  0% {
+    stroke-dashoffset: 290;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rotate-arrow {
+  0% {
+    stroke-dashoffset: 80;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

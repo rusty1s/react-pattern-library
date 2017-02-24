@@ -12,6 +12,7 @@ import {
   PasswordInput,
   IntegerInput,
   FormField,
+  SuccessNotification,
 } from '../src';
 
 class App extends Component {
@@ -60,6 +61,9 @@ class App extends Component {
             <TextInput id="wadaw" onInput={this.onInput} value={this.state.value} />
           </FormField>
         </Box>
+        <SuccessNotification>
+          wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
+        </SuccessNotification>
       </Baseline>
     );
   }
