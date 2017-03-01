@@ -1,6 +1,7 @@
-import 'normalize.css';
-import './globals/base.css';
+// import 'normalize.css';
+// import './globals/base.css';
 
+export { default as Spinner } from './atoms/Spinner';
 export { default as Title, SubTitle } from './atoms/Title';
 export { default as Button } from './atoms/Button';
 export { default as SuccessNotification } from './atoms/Notification';
