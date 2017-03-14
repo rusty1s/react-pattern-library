@@ -13,6 +13,9 @@ import {
   IntegerInput,
   FormField,
   SuccessNotification,
+  InfoNotification,
+  WarningNotification,
+  DangerNotification,
 } from '../src';
 
 class App extends Component {
@@ -52,18 +55,27 @@ class App extends Component {
               value={this.state.value}
             />
             <TextInput id="1" placeholder={'lolol'} onInput={this.onInput} value={this.state.value} required />
-            <TextInput id="2"readOnly onInput={this.onInput} value={this.state.value} />
+            <TextInput id="2" readOnly onInput={this.onInput} value={this.state.value} />
             <TextInput id="3" onInput={this.onInput} value={this.state.value} />
             <PasswordInput id="4" onInput={this.onInput} value={this.state.value} />
             <IntegerInput id="5" onInput={this.onIntegerInput} value={this.state.intValue} max={5} />
           </Grid>
-          <FormField name="Label">
+          <FormField name="Label" >
             <TextInput id="wadaw" onInput={this.onInput} value={this.state.value} />
           </FormField>
         </Box>
         <SuccessNotification>
           wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
         </SuccessNotification>
+        <InfoNotification>
+          wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
+        </InfoNotification>
+        <WarningNotification>
+          wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
+        </WarningNotification>
+        <DangerNotification>
+          wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
+        </DangerNotification>
       </Baseline>
     );
   }

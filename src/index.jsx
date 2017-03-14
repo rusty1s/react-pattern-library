@@ -1,10 +1,15 @@
-// import 'normalize.css';
-// import './globals/base.css';
+import 'normalize.css';
+import './globals/base.css';
 
 export { default as Spinner } from './atoms/Spinner';
 export { default as Title, SubTitle } from './atoms/Title';
 export { default as Button } from './atoms/Button';
-export { default as SuccessNotification } from './atoms/Notification';
+export {
+  default as SuccessNotification,
+  InfoNotification,
+  WarningNotification,
+  DangerNotification,
+} from './atoms/Notification';
 export { default as Paragraph } from './atoms/Paragraph';
 
 export { default as TextInput } from './atoms/Input/TextInput';
