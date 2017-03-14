@@ -18,15 +18,16 @@
 }
 
 .success {
-  background: #5ed490;
+  background: #dbe2d3;
+  border: 1px solid #819c67;
 
   & .content {
-    color: white;
+    color: #4c7226;
   }
 
   & .icon {
     & .border {
-      stroke: white;
+      stroke: #4c7226;
       fill: transparent;
       stroke-width: 8;
       stroke-dasharray: 1000;
@@ -36,7 +37,7 @@
 
     & .content {
       & polyline {
-        stroke: white;
+        stroke: #4c7226;
         fill: transparent;
         stroke-width: 8;
         stroke-dasharray: 1000;
@@ -47,16 +48,17 @@
   }
 }
 
-.warning {
-  background: #f93;
+.info {
+  background: #d8ebf8;
+  border: 1px solid #97c1da;
 
   & .content {
-    color: white;
+    color: #264c72;
   }
 
   & .icon {
     & .border {
-      stroke: white;
+      stroke: #264c72;
       fill: transparent;
       stroke-width: 8;
       stroke-dasharray: 1000;
@@ -66,7 +68,7 @@
 
     & .content {
       & line {
-        stroke: white;
+        stroke: #264c72;
         stroke-width: 8;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
@@ -74,24 +76,25 @@
       }
 
       & circle {
-        stroke: white;
-        fill: white;
+        stroke: #264c72;
+        fill: #264c72;
         stroke-width: 0;
       }
     }
   }
 }
 
-.info {
-  background: #0af;
+.warning {
+  background: #ffe3c8;
+  border: 1px solid #dca874;
 
   & .content {
-    color: white;
+    color: #613a00;
   }
 
   & .icon {
     & .border {
-      stroke: white;
+      stroke: #613a00;
       fill: transparent;
       stroke-width: 8;
       stroke-dasharray: 1000;
@@ -101,7 +104,7 @@
 
     & .content {
       & line {
-        stroke: white;
+        stroke: #613a00;
         stroke-width: 8;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
@@ -109,8 +112,8 @@
       }
 
       & circle {
-        stroke: white;
-        fill: white;
+        stroke: #613a00;
+        fill: #613a00;
         stroke-width: 0;
       }
     }
@@ -118,17 +121,18 @@
 }
 
 .danger {
-  background: #f00;
+  background: #f8d8d8;
+  border: 1px solid #da9797;
 
   & .content {
-    color: white;
+    color: #9c2400;
   }
 
   & .icon {
     & .border {
-      stroke: white;
-      stroke-width: 8;
+      stroke: #9c2400;
       fill: transparent;
+      stroke-width: 8;
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
       animation: dash 1.5s linear forwards;
@@ -136,7 +140,7 @@
 
     & .content {
       & line {
-        stroke: white;
+        stroke: #9c2400;
         stroke-width: 8;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
