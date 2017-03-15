@@ -51,6 +51,8 @@ SuccessNotification.defaultProps = {
   className: null,
 };
 
+export default SuccessNotification;
+
 const InfoIcon = (
   <svg className={styles.icon} viewBox="0 0 100 100" >
     <circle cx="50" cy="50" r="46" className={styles.border} />
@@ -79,8 +81,6 @@ InfoNotification.propTypes = {
 InfoNotification.defaultProps = {
   className: null,
 };
-
-export default SuccessNotification;
 
 const WarningIcon = (
   <svg className={styles.icon} viewBox="0 0 100 100" >

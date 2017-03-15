@@ -42,7 +42,7 @@
         stroke-width: 8;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
-        animation: dash 1.5s linear forwards;
+        animation: dash 2.5s linear forwards;
       }
     }
   }
@@ -72,7 +72,7 @@
         stroke-width: 8;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
-        animation: dash 1.5s linear forwards;
+        animation: dash 2.5s linear forwards;
       }
 
       & circle {
@@ -108,7 +108,7 @@
         stroke-width: 8;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
-        animation: dash 1.5s linear forwards;
+        animation: dash 2.5s linear forwards;
       }
 
       & circle {
@@ -144,7 +144,7 @@
         stroke-width: 8;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
-        animation: dash 1.5s linear forwards;
+        animation: dash 2.5s linear forwards;
       }
     }
   }
