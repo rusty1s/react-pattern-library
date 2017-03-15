@@ -1,4 +1,5 @@
 .background {
+  background: rgba(211, 211, 211, 0.5);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -21,10 +22,7 @@
 .path {
   stroke-linecap: round;
   fill: none;
-  stroke-width: 2;
-  cx: 25;
-  cy: 25;
-  r: 20;
+  stroke-width: 3;
   stroke: white;
   animation: dash 1.5s ease-in-out infinite;
 }
