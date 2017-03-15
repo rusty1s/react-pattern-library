@@ -5,8 +5,9 @@ import styles from './input.css';
 
 export default class Input extends Component {
   static propTypes = {
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     type: PropTypes.string,
-    value: PropTypes.string,
+    size: PropTypes.string,
     readOnly: PropTypes.bool,
     required: PropTypes.bool,
     invalid: PropTypes.bool,
@@ -14,10 +15,13 @@ export default class Input extends Component {
     onInput: PropTypes.func.isRequired,
     onChange: PropTypes.func,
     onEnter: PropTypes.func,
-  }
+  };
 
-  static defaultProps = {
+  static
+  defaultProps = {
+    tag: 'input',
     type: 'text',
+    size: '1',
     value: '',
     readOnly: false,
     required: false,
@@ -26,25 +30,35 @@ export default class Input extends Component {
     onInput: null,
     onChange: null,
     onEnter: null,
-  }
+  };
 
   handleInput = (event) => {
     this.props.onInput(event.target.value);
-  }
+  };
 
   handleKeyPress = (event) => {
     if (!this.props.readOnly && event.key === 'Enter') {
       this.props.onChange();
       this.props.onEnter();
     }
-  }
+  };
 
   handleBlur = () => {
     if (!this.propsreadOnly) this.props.onChange();
-  }
+  };
 
   render() {
-    const { onInput, onChange, onEnter, className, invalid, ...props } = this.props;
+    const {
+      tag,
+      type,
+      size,
+      onInput,
+      onChange,
+      onEnter,
+      className,
+      invalid,
+      ...props
+    } = this.props;
 
     const classNames = cx(className, styles.main, {
       [`${styles.readOnly}`]: this.props.readOnly,
@@ -52,9 +66,12 @@ export default class Input extends Component {
       [`${styles.invalid}`]: invalid,
     });
 
+    const dropdownInput = type === 'dropdown';
+    const Tag = dropdownInput ? 'select' : tag;
+
     return (
-      <input
-        size={1}
+      <Tag
+        size={size}
         className={classNames}
         onChange={onInput ? this.handleInput : null}
         onKeyPress={onChange || onEnter ? this.handleKeyPress : null}

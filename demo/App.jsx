@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import {
   Baseline,
   Box,
@@ -16,6 +15,7 @@ import {
   InfoNotification,
   WarningNotification,
   DangerNotification,
+  Dropdown,
 } from '../src';
 
 class App extends Component {
@@ -33,6 +33,10 @@ class App extends Component {
   }
 
   onClick = () => 'Clicked!';
+
+  onDropdownInput = (value) => {
+    this.setState({ value });
+  }
 
   render() {
     return (
@@ -59,6 +63,11 @@ class App extends Component {
             <TextInput id="3" onInput={this.onInput} value={this.state.value} />
             <PasswordInput id="4" onInput={this.onInput} value={this.state.value} />
             <IntegerInput id="5" onInput={this.onIntegerInput} value={this.state.intValue} max={5} />
+            <Dropdown id="6" onInput={this.onDropdownInput} value={this.state.value} >
+              <option>&nbsp;</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Dropdown>
           </Grid>
           <FormField name="Label" >
             <TextInput id="wadaw" onInput={this.onInput} value={this.state.value} />

@@ -15,6 +15,7 @@ export { default as Paragraph } from './atoms/Paragraph';
 export { default as TextInput } from './atoms/Input/TextInput';
 export { default as PasswordInput } from './atoms/Input/PasswordInput';
 export { default as IntegerInput } from './atoms/Input/IntegerInput';
+export { default as Dropdown } from './atoms/Input/Dropdown';
 
 export { default as Baseline } from './molecules/Baseline';
 export { default as Box } from './molecules/Box';
