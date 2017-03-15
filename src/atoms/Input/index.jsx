@@ -73,6 +73,7 @@ export default class Input extends Component {
       <Tag
         size={size}
         className={classNames}
+        type={type}
         onChange={onInput ? this.handleInput : null}
         onKeyPress={onChange || onEnter ? this.handleKeyPress : null}
         onBlur={onChange ? this.handleBlur : null}
