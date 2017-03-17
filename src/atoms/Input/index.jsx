@@ -7,7 +7,8 @@ export default class Input extends Component {
   static propTypes = {
     tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     type: PropTypes.string,
-    size: PropTypes.string,
+    size: PropTypes.number,
+    nav: PropTypes.bool,
     readOnly: PropTypes.bool,
     required: PropTypes.bool,
     invalid: PropTypes.bool,
@@ -21,8 +22,9 @@ export default class Input extends Component {
   defaultProps = {
     tag: 'input',
     type: 'text',
-    size: '1',
+    size: 1,
     value: '',
+    nav: false,
     readOnly: false,
     required: false,
     invalid: false,
@@ -56,17 +58,25 @@ export default class Input extends Component {
       onChange,
       onEnter,
       className,
+      readOnly,
+      required,
       invalid,
       ...props
     } = this.props;
 
     const classNames = cx(className, styles.main, {
-      [`${styles.readOnly}`]: this.props.readOnly,
-      [`${styles.required}`]: this.props.required,
+      [`${styles.readOnly}`]: readOnly,
+      [`${styles.required}`]: required,
       [`${styles.invalid}`]: invalid,
     });
 
     const dropdownInput = type === 'dropdown';
+    const dateInput = type === 'date';
+
+    if (dateInput) {
+      // TODO: To implement DateInput
+    }
+
     const Tag = dropdownInput ? 'select' : tag;
 
     return (

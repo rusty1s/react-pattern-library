@@ -16,6 +16,12 @@ import {
   WarningNotification,
   DangerNotification,
   Dropdown,
+  Nav,
+  LeftNavSection,
+  CenterNavSection,
+  RightNavSection,
+  NavInput,
+  NavButton,
 } from '../src';
 
 class App extends Component {
@@ -41,6 +47,20 @@ class App extends Component {
   render() {
     return (
       <Baseline>
+        <Nav>
+          <LeftNavSection>
+            <NavButton text="Left" />
+            <NavInput />
+          </LeftNavSection>
+          <CenterNavSection>
+            <NavButton text="Center" />
+            <NavInput />
+          </CenterNavSection>
+          <RightNavSection>
+            <NavButton text="Rigth" />
+            <NavInput />
+          </RightNavSection>
+        </Nav>
         <Box>
           <Title text="Hello, World" />
           <SubTitle text="Hello, World" />
@@ -60,10 +80,15 @@ class App extends Component {
             />
             <TextInput id="1" placeholder={'lolol'} onInput={this.onInput} value={this.state.value} required />
             <TextInput id="2" readOnly onInput={this.onInput} value={this.state.value} />
-            <TextInput id="3" onInput={this.onInput} value={this.state.value} />
+            <TextInput id="3" required onInput={this.onInput} value={this.state.value} />
             <PasswordInput id="4" onInput={this.onInput} value={this.state.value} />
             <IntegerInput id="5" onInput={this.onIntegerInput} value={this.state.intValue} max={5} />
             <Dropdown id="6" onInput={this.onDropdownInput} value={this.state.value} >
+              <option>&nbsp;</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Dropdown>
+            <Dropdown id="7" readOnly onInput={this.onDropdownInput} value={this.state.value} >
               <option>&nbsp;</option>
               <option>Option 1</option>
               <option>Option 2</option>

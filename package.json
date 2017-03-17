@@ -8,10 +8,16 @@
     "email": "matthias.fey@tu-dortmund.de"
   },
   "license": "MIT",
-  "author": {
-    "name": "Matthias Fey",
-    "email": "matthias.fey@tu-dortmund.de"
-  },
+  "contributors": [
+    {
+      "name": "Matthias Fey",
+      "email": "matthias.fey@tu-dortmund.de"
+    },
+    {
+      "name": "John Gockel",
+      "email": "john.gockel001@stud.fh-dortmund.de"
+    }
+  ],
   "files": [
     "src"
   ],
