@@ -12,8 +12,8 @@ const defaultProps = {
   className: '',
 };
 
-const NavInput = (className, ...props) => (
-  <TextInput className={cx(className, styles.navInput)} {...props} />
+const NavInput = ({ className, ...props }) => (
+  <TextInput className={cx(className, styles.input)} {...props} />
 );
 
 NavInput.propTypes = propTypes;

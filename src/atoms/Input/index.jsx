@@ -18,8 +18,7 @@ export default class Input extends Component {
     onEnter: PropTypes.func,
   };
 
-  static
-  defaultProps = {
+  static defaultProps = {
     tag: 'input',
     type: 'text',
     size: 1,

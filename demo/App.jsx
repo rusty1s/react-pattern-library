@@ -18,7 +18,7 @@ import {
   Dropdown,
   Nav,
   NavSection,
-  NavInput,
+  NavSearch,
   NavButton,
 } from '../src';
 
@@ -46,17 +46,14 @@ class App extends Component {
     return (
       <Baseline>
         <Nav>
-          <NavSection center fill >
-            <NavButton text="Center" />
-            <NavInput />
+          <NavSection center >
+            <NavSearch />
           </NavSection>
           <NavSection right >
             <NavButton text="Right" />
-            <NavInput />
           </NavSection>
-          <NavSection left >
+          <NavSection >
             <NavButton text="Left" />
-            <NavInput />
           </NavSection>
         </Nav>
         <Box>
