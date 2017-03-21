@@ -18,7 +18,7 @@ const NavButton = ({ className, ...props }) => (
   <Button className={cx(className, style.navButton)} {...props} />
 );
 
-NavButton.propType = propTypes;
-NavButton.defaulProps = defaultProps;
+NavButton.propTypes = propTypes;
+NavButton.defaultProps = defaultProps;
 
 export default NavButton;

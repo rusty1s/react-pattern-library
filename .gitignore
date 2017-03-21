@@ -3,4 +3,5 @@ node_modules
 coverage
 *.log
 .babelrc
-.idea
+.idea/
+react-pattern-library.iml

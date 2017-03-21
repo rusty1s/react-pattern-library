@@ -10,22 +10,25 @@
 .left {
   display: flex;
   flex-direction: row;
+  order: 1;
 }
 
 .center {
   display: flex;
   flex-direction: row;
+  order: 2;
 }
 
 .right {
   display: flex;
   flex-direction: row-reverse;
+  order: 3;
 }
 
-.grow {
+.fill {
   flex-grow: 1;
 }
 
-.input {
-  border: 1px solid red;
+.navInput {
+  width: 100%;
 }

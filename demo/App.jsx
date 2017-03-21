@@ -17,9 +17,7 @@ import {
   DangerNotification,
   Dropdown,
   Nav,
-  LeftNavSection,
-  CenterNavSection,
-  RightNavSection,
+  NavSection,
   NavInput,
   NavButton,
 } from '../src';
@@ -48,18 +46,18 @@ class App extends Component {
     return (
       <Baseline>
         <Nav>
-          <LeftNavSection>
-            <NavButton text="Left" />
-            <NavInput />
-          </LeftNavSection>
-          <CenterNavSection>
+          <NavSection center fill >
             <NavButton text="Center" />
             <NavInput />
-          </CenterNavSection>
-          <RightNavSection>
-            <NavButton text="Rigth" />
+          </NavSection>
+          <NavSection right >
+            <NavButton text="Right" />
             <NavInput />
-          </RightNavSection>
+          </NavSection>
+          <NavSection left >
+            <NavButton text="Left" />
+            <NavInput />
+          </NavSection>
         </Nav>
         <Box>
           <Title text="Hello, World" />

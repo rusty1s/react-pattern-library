@@ -23,6 +23,6 @@ export { default as Grid } from './molecules/Grid';
 export { default as FormField } from './molecules/FormField';
 
 export { default as Nav } from './components/Nav/Nav';
-export { default as LeftNavSection, CenterNavSection, RightNavSection } from './components/Nav/NavSection';
+export { default as NavSection } from './components/Nav/NavSection';
 export { default as NavInput } from './components/Nav/NavInput';
 export { default as NavButton } from './components/Nav/NavButton';

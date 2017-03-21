@@ -6,49 +6,42 @@ import styles from './nav.css';
 const propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  left: PropTypes.bool,
+  center: PropTypes.bool,
+  right: PropTypes.bool,
+  fill: PropTypes.bool,
 };
 
 const defaultProps = {
   className: '',
+  left: true,
+  center: false,
+  right: false,
+  fill: false,
 };
 
-const NavSection = ({ className, children, ...props }) => (
-  <section className={cx(className, styles.navSection)} {...props} >
-    {children}
-  </section>
-);
+const NavSection = ({ className, children, left, center, right, fill, ...props }) => {
+  let Left = left;
+
+  if (center || right) {
+    Left = false;
+  }
+
+  const classNames = cx(className, styles.main, {
+    [`${styles.left}`]: Left,
+    [`${styles.center}`]: center,
+    [`${styles.right}`]: right,
+    [`${styles.fill}`]: fill,
+  });
+
+  return (
+    <section className={classNames} {...props} >
+      {children}
+    </section>
+  );
+};
 
 NavSection.propTypes = propTypes;
 NavSection.defaultProps = defaultProps;
 
-
-const LeftNavSection = ({ className, children, ...props }) => (
-  <NavSection className={cx(className, styles.left)} {...props} >
-    {children}
-  </NavSection>
-);
-
-LeftNavSection.propTypes = propTypes;
-LeftNavSection.defaultProps = defaultProps;
-
-export default LeftNavSection;
-
-
-export const CenterNavSection = ({ className, children, ...props }) => (
-  <NavSection className={cx(className, styles.center)} {...props} >
-    {children}
-  </NavSection>
-);
-
-CenterNavSection.propTypes = propTypes;
-CenterNavSection.defaultProps = defaultProps;
-
-
-export const RightNavSection = ({ className, children, ...props }) => (
-  <NavSection className={cx(className, styles.right)} {...props} >
-    {children}
-  </NavSection>
-);
-
-RightNavSection.propTypes = propTypes;
-RightNavSection.defaultProps = defaultProps;
+export default NavSection;
