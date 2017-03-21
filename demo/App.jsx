@@ -20,6 +20,7 @@ import {
   NavSection,
   NavSearch,
   NavButton,
+  NavSeparator,
 } from '../src';
 
 class App extends Component {
@@ -53,6 +54,7 @@ class App extends Component {
             <NavButton text="Right" />
           </NavSection>
           <NavSection >
+            <NavSeparator />
             <NavButton text="Left" />
           </NavSection>
         </Nav>

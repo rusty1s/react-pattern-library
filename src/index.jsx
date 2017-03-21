@@ -27,3 +27,4 @@ export { default as NavSection } from './components/Nav/NavSection';
 export { default as NavInput } from './components/Nav/NavInput';
 export { default as NavSearch } from './components/Nav/NavSearch';
 export { default as NavButton } from './components/Nav/NavButton';
+export { default as NavSeparator } from './components/Nav/NavSeparator';

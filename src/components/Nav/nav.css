@@ -36,3 +36,7 @@
 .search {
   border-color: red;
 }
+
+.separator {
+  border-left: 1px solid red;
+}
