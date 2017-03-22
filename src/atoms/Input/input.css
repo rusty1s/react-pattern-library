@@ -1,5 +1,5 @@
 @value colors: '../../values/colors.css';
-@value primary-inverted, primary-light from colors;
+@value background-required, border-required, primary-inverted, primary-light from colors;
 
 .main {
   /* This needs to be `em` to allow same width for all input types. */
@@ -22,7 +22,8 @@
 }
 
 .required {
-  background: primary-inverted;
+  border: border-required;
+  background: background-required;
 }
 
 .invalid {
