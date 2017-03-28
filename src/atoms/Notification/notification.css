@@ -46,6 +46,35 @@
   }
 }
 
+.error {
+  background: #f56668;
+
+  & .content {
+    color: white;
+  }
+
+  & .icon {
+    & circle {
+      stroke: white;
+      fill: transparent;
+      stroke-width: 8;
+      cx: 50;
+      cy: 50;
+      r: 46;
+      stroke-dasharray: 290, 290;
+      animation: rotate-circle 0.5s ease-in-out;
+    }
+
+    & polyline {
+      stroke: white;
+      fill: transparent;
+      stroke-width: 8;
+      stroke-dasharray: 80, 80;
+      animation: rotate-arrow 0.5s ease-in-out;
+    }
+  }
+}
+
 @keyframes rotate-circle {
   0% {
     stroke-dashoffset: 290;

@@ -50,3 +50,30 @@ SuccessNotification.defaultProps = {
 };
 
 export default SuccessNotification;
+
+const ErrorIcon = (
+  <svg className={styles.icon} viewBox="0 0 100 100">
+    <circle />
+    <polyline points="30,30 70,70" />
+    <polyline points="70,30 30,70" />
+  </svg>
+);
+
+export const ErrorNotification = ({ children, className, ...props }) => (
+  <Notification
+    icon={ErrorIcon}
+    className={cx(className, styles.error)}
+    {...props}
+  >
+    {children}
+  </Notification>
+);
+
+ErrorNotification.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
+
+ErrorNotification.defaultProps = {
+  className: null,
+};

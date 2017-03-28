@@ -13,12 +13,32 @@ import {
   IntegerInput,
   FormField,
   SuccessNotification,
+  ErrorNotification,
+  NotificationCenter,
 } from '../src';
+
+let gid = 0;
 
 class App extends Component {
   state = {
     value: 'wdawd',
     intValue: '0',
+    notifications: [],
+  }
+
+  onRemove = id => this.setState({
+    notifications: this.state.notifications.filter(n => n.id !== id),
+  });
+
+  onAdd = () => {
+    this.setState({
+      notifications: [...this.state.notifications, {
+        id: gid,
+        type: 'error',
+        message: 'nenenenenwnwnw',
+      }],
+    });
+    gid += 1;
   }
 
   onInput = (value) => {
@@ -64,6 +84,14 @@ class App extends Component {
         <SuccessNotification>
           wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
         </SuccessNotification>
+        <ErrorNotification>
+          wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
+        </ErrorNotification>
+        <Button text="Add" onClick={this.onAdd} />
+        <NotificationCenter
+          notifications={this.state.notifications}
+          onRemove={this.onRemove}
+        />
       </Baseline>
     );
   }
