@@ -21,6 +21,7 @@ import {
   NavSearch,
   NavButton,
   NavSeparator,
+  Spinner,
 } from '../src';
 
 let gid = 0;
@@ -125,6 +126,9 @@ class App extends Component {
         <DangerNotification>
           wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
         </DangerNotification>
+        <div style={{position: 'relative', height: '10em'}}>
+          <Spinner size="5em" dim />
+        </div>
       </Baseline>
     );
   }
