@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import {
   Baseline,
   Box,
@@ -13,8 +12,15 @@ import {
   IntegerInput,
   FormField,
   SuccessNotification,
-  ErrorNotification,
-  NotificationCenter,
+  InfoNotification,
+  WarningNotification,
+  DangerNotification,
+  Dropdown,
+  Nav,
+  NavSection,
+  NavSearch,
+  NavButton,
+  NavSeparator,
 } from '../src';
 
 let gid = 0;
@@ -51,9 +57,25 @@ class App extends Component {
 
   onClick = () => 'Clicked!';
 
+  onDropdownInput = (value) => {
+    this.setState({ value });
+  }
+
   render() {
     return (
       <Baseline>
+        <Nav>
+          <NavSection center >
+            <NavSearch />
+          </NavSection>
+          <NavSection right >
+            <NavButton text="Right" />
+          </NavSection>
+          <NavSection >
+            <NavSeparator />
+            <NavButton text="Left" />
+          </NavSection>
+        </Nav>
         <Box>
           <Title text="Hello, World" />
           <SubTitle text="Hello, World" />
@@ -72,26 +94,37 @@ class App extends Component {
               value={this.state.value}
             />
             <TextInput id="1" placeholder={'lolol'} onInput={this.onInput} value={this.state.value} required />
-            <TextInput id="2"readOnly onInput={this.onInput} value={this.state.value} />
-            <TextInput id="3" onInput={this.onInput} value={this.state.value} />
+            <TextInput id="2" readOnly onInput={this.onInput} value={this.state.value} />
+            <TextInput id="3" required onInput={this.onInput} value={this.state.value} />
             <PasswordInput id="4" onInput={this.onInput} value={this.state.value} />
             <IntegerInput id="5" onInput={this.onIntegerInput} value={this.state.intValue} max={5} />
+            <Dropdown id="6" onInput={this.onDropdownInput} value={this.state.value} >
+              <option>&nbsp;</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Dropdown>
+            <Dropdown id="7" readOnly onInput={this.onDropdownInput} value={this.state.value} >
+              <option>&nbsp;</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Dropdown>
           </Grid>
-          <FormField name="Label">
+          <FormField name="Label" >
             <TextInput id="wadaw" onInput={this.onInput} value={this.state.value} />
           </FormField>
         </Box>
         <SuccessNotification>
           wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
         </SuccessNotification>
-        <ErrorNotification>
+        <InfoNotification>
           wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
-        </ErrorNotification>
-        <Button text="Add" onClick={this.onAdd} />
-        <NotificationCenter
-          notifications={this.state.notifications}
-          onRemove={this.onRemove}
-        />
+        </InfoNotification>
+        <WarningNotification>
+          wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
+        </WarningNotification>
+        <DangerNotification>
+          wadawdwda uwdhawui dhuawi dauwid awuid awd hawuidh awiud awuid auwid
+        </DangerNotification>
       </Baseline>
     );
   }

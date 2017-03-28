@@ -1,0 +1,42 @@
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  order: 1;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  order: 2;
+}
+
+.right {
+  display: flex;
+  flex-direction: row-reverse;
+  order: 3;
+}
+
+.fill {
+  flex-grow: 1;
+}
+
+.input {
+  width: 100%;
+}
+
+.search {
+  border-color: red;
+}
+
+.separator {
+  border-left: 1px solid red;
+}
