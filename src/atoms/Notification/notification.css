@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: #e5a300;
-  color: #fff;
   overflow: hidden;
 }
 
