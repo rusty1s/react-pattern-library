@@ -1,157 +1,49 @@
 .main {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  border-radius: 0.5em;
-  padding: 0.5em 1em;
-}
-
-.icon {
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 2em;
+  background: #e5a300;
+  color: #fff;
+  overflow: hidden;
 }
 
 .content {
+  padding: 1rem;
   flex-grow: 1;
-  flex-shrink: 1;
-  padding: 0.5em 0 0.5em 1em;
 }
 
-.success {
-  background: #dbe2d3;
-  border: 1px solid #819c67;
-
-  & .content {
-    color: #4c7226;
-  }
-
-  & .icon {
-    & .border {
-      stroke: #4c7226;
-      fill: transparent;
-      stroke-width: 8;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: dash 1.5s linear forwards;
-    }
-
-    & .content {
-      & polyline {
-        stroke: #4c7226;
-        fill: transparent;
-        stroke-width: 8;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        animation: dash 2.5s linear forwards;
-      }
-    }
-  }
+.close {
+  margin: 0 1rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background: none;
+  border: 2px solid white;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.2rem;
+  padding: 0;
 }
 
-.info {
-  background: #d8ebf8;
-  border: 1px solid #97c1da;
-
-  & .content {
-    color: #264c72;
-  }
-
-  & .icon {
-    & .border {
-      stroke: #264c72;
-      fill: transparent;
-      stroke-width: 8;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: dash 1.5s linear forwards;
-    }
-
-    & .content {
-      & line {
-        stroke: #264c72;
-        stroke-width: 8;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        animation: dash 2.5s linear forwards;
-      }
-
-      & circle {
-        stroke: #264c72;
-        fill: #264c72;
-        stroke-width: 0;
-      }
-    }
-  }
+.error {
+  background: #e5a300;
+  color: #fff;
 }
 
 .warning {
-  background: #ffe3c8;
-  border: 1px solid #dca874;
-
-  & .content {
-    color: #613a00;
-  }
-
-  & .icon {
-    & .border {
-      stroke: #613a00;
-      fill: transparent;
-      stroke-width: 8;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: dash 1.5s linear forwards;
-    }
-
-    & .content {
-      & line {
-        stroke: #613a00;
-        stroke-width: 8;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        animation: dash 2.5s linear forwards;
-      }
-
-      & circle {
-        stroke: #613a00;
-        fill: #613a00;
-        stroke-width: 0;
-      }
-    }
-  }
+  background: #f56668;
+  color: #fff;
 }
 
-.danger {
-  background: #f8d8d8;
-  border: 1px solid #da9797;
-
-  & .content {
-    color: #9c2400;
-  }
-
-  & .icon {
-    & .border {
-      stroke: #9c2400;
-      fill: transparent;
-      stroke-width: 8;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: dash 1.5s linear forwards;
-    }
-
-    & .content {
-      & line {
-        stroke: #9c2400;
-        stroke-width: 8;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        animation: dash 2.5s linear forwards;
-      }
-    }
-  }
+.success {
+  background: #5ed490;
+  color: #fff;
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
+.info {
+  background: #2a7ac0;
+  color: #fff;
 }

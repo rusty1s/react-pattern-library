@@ -4,11 +4,13 @@ import cx from 'classnames';
 import styles from './spinner.css';
 
 const Spinner = ({ size, dim, className, ...props }) => (
-  <div className={cx(
-    styles.background,
-    (dim ? styles.dim : null),
-    className,
-  )}>
+  <div
+    className={cx(
+      styles.background,
+      (dim ? styles.dim : null),
+      className,
+    )}
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={styles.main}
