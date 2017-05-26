@@ -27,12 +27,13 @@
 }
 
 .error {
+  background: #f56668;
   background: #e5a300;
   color: #fff;
 }
 
 .warning {
-  background: #f56668;
+  background: #e5a300;
   color: #fff;
 }
 
