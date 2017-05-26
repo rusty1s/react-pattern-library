@@ -21,7 +21,7 @@
   "files": [
     "src"
   ],
-  "main": "src/index.jsx",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/rusty1s/react-pattern-library"
