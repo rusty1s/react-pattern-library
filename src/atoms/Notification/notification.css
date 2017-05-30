@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: #e5a300;
-  color: #fff;
   overflow: hidden;
 }
 
@@ -29,12 +27,12 @@
 }
 
 .error {
-  background: #e5a300;
+  background: #f56668;
   color: #fff;
 }
 
 .warning {
-  background: #f56668;
+  background: #e5a300;
   color: #fff;
 }
 
