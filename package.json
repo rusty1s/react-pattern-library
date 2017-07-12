@@ -37,7 +37,6 @@
   "scripts": {
     "lint:js": "react-dev-config lint js",
     "lint:css": "react-dev-config lint css",
-    "start": "react-dev-config start",
     "test": "react-dev-config test",
     "test:watch": "npm test -- --watch"
   },
