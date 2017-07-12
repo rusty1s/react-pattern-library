@@ -12,7 +12,8 @@ install:
   - npm install react react-dom
   - npm install
 script:
-  - npm run lint
+  - npm run lint:js
+  - npm run lint:css
   - npm test
 after_success:
   - codecov
