@@ -1,9 +1,13 @@
 {
   "private": true,
+  "scripts": {
+    "start": "react-dev-config start"
+  },
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-pattern-library": "../dist"
   },
   "devDependencies": {
     "react-dev-config": "^2.2.1"

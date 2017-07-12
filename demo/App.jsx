@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Baseline } from '../src';
+// import { Baseline } from 'react-pattern-library';
 
 const App = () => (
-  <Baseline>
+  <div>
     <div>adwadawd</div>
     <div>adwadawd</div>
-  </Baseline>
+  </div>
 
 );
 
